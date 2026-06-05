@@ -127,13 +127,13 @@ export default function Contact() {
           </div>
           {copied === '+251-946-776-979' && <span className="copy-feedback">Copied!</span>}
           <div className="contact-line">
-            <a href="tel:+251913110204" className="contact-link">
+            <a href="tel:+251913112204" className="contact-link">
               +251-913-110-204
             </a>
             <button
               type="button"
               className="copy-icon-button"
-              onClick={() => handleCopy('+251-913-110-204')}
+              onClick={() => handleCopy('+251-913-112-204')}
               aria-label="Copy phone number"
             >
               <HiOutlineClipboardDocument />
