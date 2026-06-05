@@ -47,7 +47,7 @@ export default function Contact() {
 
       <div className="contact-channels">
         <a
-          href={`https://wa.me/${WHATSAPP_NUMBER}?text=Hi%20Bluefield%20Solutions`}
+          href={`https://chat.whatsapp.com/HweVVeixxJHHWKQSap3ARn`}
           target="_blank"
           rel="noopener noreferrer"
           className="channel-card whatsapp"
@@ -62,7 +62,7 @@ export default function Contact() {
         </a>
 
         <a
-          href={`https://t.me/${TELEGRAM_USERNAME}`}
+          href={`https://t.me/+5k6XF0ezsPwzZGM0`}
           target="_blank"
           rel="noopener noreferrer"
           className="channel-card telegram"
