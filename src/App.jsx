@@ -8,6 +8,7 @@ import Contact from './pages/Contact'
 import Testimonials from './pages/Testimonials'
 import Blog from './pages/Blog'
 import NotFound from './pages/NotFound'
+import Gallery from './pages/Gallery'
 
 function App() {
   return (
@@ -18,6 +19,7 @@ function App() {
           <Route path="about" element={<CompanyProfile />} />
           <Route path="services" element={<Services />} />
           <Route path="team" element={<Team />} />
+          <Route path="gallery" element={<Gallery />} />
           <Route path="contact" element={<Contact />} />
           <Route path="testimonials" element={<Testimonials />} />
           <Route path="blog" element={<Blog />} />
