@@ -7,13 +7,13 @@ export default function Footer() {
           <p>Wastewater treatment consulting, commissioning, and operations support.</p>
           <div className="social-links">
             <a href="https://www.facebook.com" target="_blank" rel="noopener noreferrer" aria-label="Facebook">
-              Facebook
+              <i className="fab fa-facebook-f"></i>
             </a>
             <a href="https://www.linkedin.com" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn">
-              LinkedIn
+              <i className="fab fa-linkedin-in"></i>
             </a>
             <a href="https://www.twitter.com" target="_blank" rel="noopener noreferrer" aria-label="Twitter">
-              Twitter
+              <i className="fab fa-twitter"></i>
             </a>
           </div>
         </div>
