@@ -1,17 +1,18 @@
 :root {
   color-scheme: light;
   font-family: Inter, system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
-  background: #eef7fc;
-  color: #102a43;
+  background: #f4fbff;
+  color: #081827;
   --bg-surface: #ffffff;
   --bg-muted: #f7fbff;
-  --text: #102a43;
-  --text-muted: #334e68;
-  --primary: #0f4d76;
-  --accent: #0891b2;
+  --text: #081827;
+  --text-muted: #274455;
+  --primary: #0b4f66;
+  --primary-soft: rgba(11, 79, 102, 0.08);
+  --accent: #056e85;
   --accent-soft: #d6f4fb;
-  --border: rgba(15, 77, 118, 0.12);
-  --shadow: 0 24px 48px rgba(15, 77, 118, 0.08);
+  --border: rgba(11, 79, 102, 0.12);
+  --shadow: 0 20px 40px rgba(11, 79, 102, 0.08);
   --radius: 24px;
 }
 
@@ -64,6 +65,18 @@ button {
   background: rgba(247, 251, 255, 0.92);
   backdrop-filter: blur(16px);
   border-bottom: 1px solid rgba(15, 77, 118, 0.08);
+}
+
+/* Give page content breathing room when header is sticky on small screens */
+@media (max-width: 640px) {
+  .page-shell {
+    padding-top: 96px;
+  }
+
+  .site-header {
+    border-bottom-left-radius: 0;
+    border-bottom-right-radius: 0;
+  }
 }
 
 .header-inner,
@@ -378,12 +391,21 @@ button {
 .team-avatar {
   width: 72px;
   height: 72px;
-  border-radius: 22px;
+  border-radius: 18px;
   display: grid;
   place-items: center;
   font-weight: 700;
   color: var(--primary);
   background: var(--primary-soft);
+  overflow: hidden;
+  flex: 0 0 72px;
+}
+
+.team-avatar img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
 }
 
 .team-role {
@@ -397,6 +419,51 @@ button {
   flex-wrap: wrap;
   gap: 10px;
   margin-top: 18px;
+}
+
+/* Gallery styles */
+.gallery-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 24px;
+  margin-top: 18px;
+}
+
+.gallery-card {
+  background: var(--bg-surface);
+  border: 1px solid var(--border);
+  border-radius: 20px;
+  overflow: hidden;
+  box-shadow: var(--shadow);
+  display: flex;
+  flex-direction: column;
+}
+
+.gallery-media {
+  width: 100%;
+  height: 180px;
+  background: var(--bg-muted);
+}
+
+.gallery-media img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+.gallery-body {
+  padding: 18px;
+}
+
+.gallery-body h3 {
+  margin: 0 0 8px;
+}
+
+.gallery-body .meta {
+  margin: 0 0 12px;
+  color: var(--text-muted);
+  font-size: 0.9rem;
 }
 
 .skill-pill {
