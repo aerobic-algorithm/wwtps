@@ -128,7 +128,7 @@ export default function Contact() {
           {copied === '+251-946-776-979' && <span className="copy-feedback">Copied!</span>}
           <div className="contact-line">
             <a href="tel:+251913112204" className="contact-link">
-              +251-913-110-204
+              +251-913-112-204
             </a>
             <button
               type="button"
