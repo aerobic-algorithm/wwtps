@@ -1,6 +1,6 @@
 import { useState } from 'react'
 import { useForm } from 'react-hook-form'
-import { HiOutlineEnvelope, HiOutlinePhone } from 'react-icons/hi2'
+import { HiOutlineClipboardDocument, HiOutlineEnvelope, HiOutlinePhone } from 'react-icons/hi2'
 
 const FORM_ENDPOINT = 'https://formspree.io/f/your-form-id'
 const WHATSAPP_NUMBER = '1234567890' // Replace with your WhatsApp number
@@ -8,12 +8,25 @@ const TELEGRAM_USERNAME = 'your_telegram_username' // Replace with your Telegram
 
 export default function Contact() {
   const [status, setStatus] = useState(null)
+  const [copied, setCopied] = useState('')
   const {
     register,
     handleSubmit,
     formState: { errors, isSubmitting },
     reset,
   } = useForm()
+
+  async function handleCopy(value) {
+    if (navigator.clipboard) {
+      try {
+        await navigator.clipboard.writeText(value)
+        setCopied(value)
+        window.setTimeout(() => setCopied(''), 1800)
+      } catch (err) {
+        console.error('Copy failed', err)
+      }
+    }
+  }
 
   async function onSubmit(data) {
     setStatus(null)
@@ -81,7 +94,20 @@ export default function Contact() {
             <HiOutlineEnvelope />
           </div>
           <h3>Email</h3>
-          <a href='mailto:hubs4solutions@gmail.com'>hubs4solutions@gmail.com</a>
+          <div className="contact-line">
+            <a href="mailto:hubs4solutions@gmail.com" className="contact-link">
+              hubs4solutions@gmail.com
+            </a>
+            <button
+              type="button"
+              className="copy-icon-button"
+              onClick={() => handleCopy('hubs4solutions@gmail.com')}
+              aria-label="Copy email address"
+            >
+              <HiOutlineClipboardDocument />
+            </button>
+          </div>
+          {copied === 'hubs4solutions@gmail.com' && <span className="copy-feedback">Copied!</span>}
         </div>
 
         <div className="channel-card phone">
@@ -89,8 +115,34 @@ export default function Contact() {
             <HiOutlinePhone />
           </div>
           <h3>Phone</h3>
-          <p>+251-946-776-979</p>
-          <p>+251-913-110-204</p>
+          <div className="contact-line">
+            <a href="tel:+251946776979" className="contact-link">
+              +251-946-776-979
+            </a>
+            <button
+              type="button"
+              className="copy-icon-button"
+              onClick={() => handleCopy('+251-946-776-979')}
+              aria-label="Copy phone number"
+            >
+              <HiOutlineClipboardDocument />
+            </button>
+          </div>
+          {copied === '+251-946-776-979' && <span className="copy-feedback">Copied!</span>}
+          <div className="contact-line">
+            <a href="tel:+251913110204" className="contact-link">
+              +251-913-110-204
+            </a>
+            <button
+              type="button"
+              className="copy-icon-button"
+              onClick={() => handleCopy('+251-913-110-204')}
+              aria-label="Copy phone number"
+            >
+              <HiOutlineClipboardDocument />
+            </button>
+          </div>
+          {copied === '+251-913-110-204' && <span className="copy-feedback">Copied!</span>}
         </div>
       </div>
 
