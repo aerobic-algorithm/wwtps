@@ -81,7 +81,7 @@ export default function Contact() {
             <HiOutlineEnvelope />
           </div>
           <h3>Email</h3>
-          <p>hubs4solutions@gmail.com</p>
+          <a href='mailto:hubs4solutions@gmail.com'>hubs4solutions@gmail.com</a>
         </div>
 
         <div className="channel-card phone">
