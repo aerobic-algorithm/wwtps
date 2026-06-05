@@ -13,19 +13,21 @@ import Gallery from './pages/Gallery'
 function App() {
   return (
     <HashRouter>
-      <Routes>
-        <Route path="/" element={<Layout />}>
-          <Route index element={<Home />} />
-          <Route path="about" element={<CompanyProfile />} />
-          <Route path="services" element={<Services />} />
-          <Route path="team" element={<Team />} />
-          <Route path="gallery" element={<Gallery />} />
-          <Route path="contact" element={<Contact />} />
-          <Route path="testimonials" element={<Testimonials />} />
-          <Route path="blog" element={<Blog />} />
-          <Route path="*" element={<NotFound />} />
-        </Route>
-      </Routes>
+      <div className="app-container">
+        <Routes>
+          <Route path="/" element={<Layout />}>
+            <Route index element={<Home />} />
+            <Route path="about" element={<CompanyProfile />} />
+            <Route path="services" element={<Services />} />
+            <Route path="team" element={<Team />} />
+            <Route path="gallery" element={<Gallery />} />
+            <Route path="contact" element={<Contact />} />
+            <Route path="testimonials" element={<Testimonials />} />
+            <Route path="blog" element={<Blog />} />
+            <Route path="*" element={<NotFound />} />
+          </Route>
+        </Routes>
+      </div>
     </HashRouter>
   )
 }
