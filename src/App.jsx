@@ -1,0 +1,31 @@
+import { BrowserRouter, Routes, Route } from 'react-router-dom'
+import Layout from './components/Layout'
+import Home from './pages/Home'
+import CompanyProfile from './pages/CompanyProfile'
+import Services from './pages/Services'
+import Team from './pages/Team'
+import Contact from './pages/Contact'
+import Testimonials from './pages/Testimonials'
+import Blog from './pages/Blog'
+import NotFound from './pages/NotFound'
+
+function App() {
+  return (
+    <BrowserRouter basename={import.meta.env.BASE_URL}>
+      <Routes>
+        <Route path="/" element={<Layout />}>
+          <Route index element={<Home />} />
+          <Route path="about" element={<CompanyProfile />} />
+          <Route path="services" element={<Services />} />
+          <Route path="team" element={<Team />} />
+          <Route path="contact" element={<Contact />} />
+          <Route path="testimonials" element={<Testimonials />} />
+          <Route path="blog" element={<Blog />} />
+          <Route path="*" element={<NotFound />} />
+        </Route>
+      </Routes>
+    </BrowserRouter>
+  )
+}
+
+export default App

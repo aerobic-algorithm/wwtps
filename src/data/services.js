@@ -1,0 +1,34 @@
+import { HiOutlineWrenchScrewdriver, HiOutlineDocumentText, HiOutlineCog, HiOutlineAcademicCap, HiOutlineBolt, HiOutlineShieldCheck } from 'react-icons/hi2'
+
+export const services = [
+  {
+    title: 'Process optimization',
+    description: 'Improve treatment efficiency with data-driven performance assessments and tuning recommendations.',
+    icon: HiOutlineCog,
+  },
+  {
+    title: 'Test & commissioning',
+    description: 'Validate equipment, controls, and chemical dosing during startup and upgrades for smooth handover.',
+    icon: HiOutlineBolt,
+  },
+  {
+    title: 'Troubleshooting',
+    description: 'Rapid field diagnostics for biological, aeration, and permit compliance issues.',
+    icon: HiOutlineWrenchScrewdriver,
+  },
+  {
+    title: 'Training & mentoring',
+    description: 'Hands-on operator training and process mentoring to build in-house confidence and safety.',
+    icon: HiOutlineAcademicCap,
+  },
+  {
+    title: 'Compliance reviews',
+    description: 'Permit-readiness checks, sampling strategies, and reporting support for regulatory reliability.',
+    icon: HiOutlineDocumentText,
+  },
+  {
+    title: 'Startup support',
+    description: 'On-site commissioning support for structural modifications, chemical systems, and final acceptance.',
+    icon: HiOutlineShieldCheck,
+  },
+]
