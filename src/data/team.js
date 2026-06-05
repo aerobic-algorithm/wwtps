@@ -1,20 +1,20 @@
 export const team = [
   {
-    name: 'Sofia Chen',
+    name: 'Sened Tariku',
     role: 'Senior Process Engineer',
     bio: 'Develops treatment strategies for aeration, nutrient removal, and chemical dosing performance.',
-    skills: ['Process design', 'Startup', 'Sampling'],
+    skills: ['Process design', 'Startup', 'Test and Commissioning', 'Troubleshooting', 'Personnel Training'],
   },
   {
-    name: 'Miguel Alvarez',
-    role: 'Operations Lead',
+    name: 'Getu Gashaw',
+    role: 'Senior Mechanical and Process Engineer',
     bio: 'Coordinates field troubleshooting, operator training, and site acceptance activities.',
-    skills: ['Troubleshooting', 'Operator coaching', 'Field safety'],
+    skills: ['Electromechanical Installation', 'Troubleshooting and Maintenance', 'Operator Coaching'],
   },
   {
-    name: 'Priya Nair',
-    role: 'Compliance Specialist',
-    bio: 'Supports permit evaluations, reporting plans, and equipment commissioning documentation.',
+    name: 'Kirubel Abiyu',
+    role: 'Electrical Engineer',
+    bio: 'Electrical Installations, reporting plans, and equipment commissioning documentation.',
     skills: ['Permitting', 'Reporting', 'Quality control'],
   },
   {

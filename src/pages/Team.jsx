@@ -6,7 +6,7 @@ export default function Team() {
     <section className="team-page">
       <div className="section-header">
         <p className="eyebrow">Our Team</p>
-        <h1>Experienced operators and process engineers.</h1>
+        <h1>Experienced Process and Electromechaincal engineers.</h1>
         <p>
           A collaborative team of treatment specialists, field engineers, and
           training professionals committed to helping your plant perform.
