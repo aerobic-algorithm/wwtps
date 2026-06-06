@@ -113,6 +113,90 @@ button {
   color: var(--primary);
 }
 
+/* Menu Toggle Button */
+.menu-toggle {
+  display: none;
+  flex-direction: column;
+  gap: 6px;
+  background: transparent;
+  border: none;
+  padding: 8px;
+  margin: -8px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  position: relative;
+}
+
+.menu-toggle span {
+  width: 24px;
+  height: 3px;
+  background: var(--primary);
+  border-radius: 2px;
+  transition: all 0.3s ease;
+  origin: center;
+}
+
+.menu-toggle:hover {
+  opacity: 0.8;
+}
+
+.menu-toggle:hover span {
+  background: var(--accent);
+}
+
+.menu-toggle:focus-visible {
+  outline: 2px solid var(--primary);
+  outline-offset: 4px;
+  border-radius: 4px;
+}
+
+.menu-toggle.active span:nth-child(1) {
+  transform: rotate(45deg) translate(10px, 10px);
+}
+
+.menu-toggle.active span:nth-child(2) {
+  opacity: 0;
+  transform: translateX(-10px);
+}
+
+.menu-toggle.active span:nth-child(3) {
+  transform: rotate(-45deg) translate(8px, -8px);
+}
+
+/* Social Links */
+.social-links {
+  display: flex;
+  gap: 16px;
+  align-items: center;
+  margin-top: 12px;
+}
+
+.social-links a {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 40px;
+  height: 40px;
+  border-radius: 8px;
+  background: rgba(11, 79, 102, 0.08);
+  color: var(--primary);
+  font-size: 1.1rem;
+  transition: all 0.3s ease;
+  text-decoration: none;
+}
+
+.social-links a:hover {
+  background: var(--primary);
+  color: white;
+  transform: translateY(-2px);
+  box-shadow: 0 8px 16px rgba(11, 79, 102, 0.16);
+}
+
+.social-links a:focus-visible {
+  outline: 2px solid var(--primary);
+  outline-offset: 2px;
+}
+
 .app-shell {
   min-height: 100vh;
 }
@@ -744,6 +828,40 @@ button {
     justify-content: flex-start;
     width: 100%;
   }
+
+  .menu-toggle {
+    display: flex;
+  }
+
+  .primary-nav {
+    display: none;
+    flex-direction: column;
+    width: 100%;
+    position: absolute;
+    top: 76px;
+    left: 0;
+    right: 0;
+    background: rgba(247, 251, 255, 0.95);
+    backdrop-filter: blur(16px);
+    border-bottom: 1px solid rgba(15, 77, 118, 0.08);
+    padding: 16px 24px;
+    gap: 12px;
+  }
+
+  .primary-nav.active {
+    display: flex;
+  }
+
+  .nav-link {
+    padding: 8px 0;
+    border-bottom: 1px solid transparent;
+    transition: all 0.25s ease;
+  }
+
+  .nav-link:hover {
+    padding-left: 8px;
+    border-bottom-color: var(--primary);
+  }
 }
 
 @media (max-width: 640px) {
@@ -768,5 +886,16 @@ button {
 
   .channel-card {
     padding: 28px 16px;
+  }
+
+  .social-links {
+    flex-wrap: wrap;
+    gap: 12px;
+  }
+
+  .social-links a {
+    width: 36px;
+    height: 36px;
+    font-size: 0.95rem;
   }
 }

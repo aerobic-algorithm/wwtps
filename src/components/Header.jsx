@@ -15,7 +15,7 @@ export default function Header() {
           Hub Wastewater Solutions
         </Link>
         <button 
-          className="menu-toggle" 
+          className={`menu-toggle ${isMenuOpen ? 'active' : ''}`}
           onClick={toggleMenu}
           aria-label="Toggle navigation"
           aria-expanded={isMenuOpen}
