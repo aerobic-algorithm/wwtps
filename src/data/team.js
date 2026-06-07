@@ -23,4 +23,10 @@ export const team = [
     bio: 'Integrates PLC systems, dosing controls, and performance test protocols.',
     skills: ['Controls', 'Dosing', 'Startup support'],
   },
+  {
+    name: 'Solomon Kore',
+    role: 'Civil Engineer',
+    bio: '..',
+    skills: ['Mangement', 'Communication', 'Coordination'],
+  },
 ]
