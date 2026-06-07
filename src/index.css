@@ -70,12 +70,24 @@ button {
 /* Give page content breathing room when header is sticky on small screens */
 @media (max-width: 640px) {
   .page-shell {
-    padding-top: 96px;
+    padding-top: 64px;
   }
 
   .site-header {
     border-bottom-left-radius: 0;
     border-bottom-right-radius: 0;
+  }
+
+  /* Reduce page padding on small screens to bring content closer to the header */
+  .home-page,
+  .company-page,
+  .services-page,
+  .team-page,
+  .contact-page,
+  .testimonials-page,
+  .blog-page,
+  .notfound-page {
+    padding: 24px 0 48px;
   }
 }
 
@@ -1003,5 +1015,13 @@ button {
 
   .contact-link {
     font-size: 0.95rem;
+  }
+}
+
+/* Desktop tweak: prefer wider team cards to avoid tall stretched layout */
+@media (min-width: 1100px) {
+  .team-grid {
+    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+    gap: 28px;
   }
 }

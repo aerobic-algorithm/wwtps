@@ -1,0 +1,5 @@
+Non-Proprietary Wastewater Treatment Resources
+
+This document points to open-source guidance, publicly available process summaries, and general treatment system best practices that are not proprietary.
+
+Use these resources for design review, operator training, or regulatory reference.
