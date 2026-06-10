@@ -980,10 +980,10 @@ button {
   }
 
   .header-controls {
-    position: absolute;
-    top: 12px;
-    right: 24px;
-    flex-direction: row-reverse;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    margin-top: 8px;
   }
 
   .primary-nav {

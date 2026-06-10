@@ -24,14 +24,6 @@ export default function Header() {
         </Link>
         <div className="header-controls">
           <button 
-            className="lang-toggle"
-            onClick={toggleLanguage}
-            aria-label="Toggle language"
-            title={`Switch to ${i18n.language === 'en' ? 'Amharic' : 'English'}`}
-          >
-            {t('header.languageSwitch')}
-          </button>
-          <button 
             className={`menu-toggle ${isMenuOpen ? 'active' : ''}`}
             onClick={toggleMenu}
             aria-label="Toggle navigation"
@@ -40,6 +32,14 @@ export default function Header() {
             <span></span>
             <span></span>
             <span></span>
+          </button>
+          <button 
+            className="lang-toggle"
+            onClick={toggleLanguage}
+            aria-label="Toggle language"
+            title={`Switch to ${i18n.language === 'en' ? 'Amharic' : 'English'}`}
+          >
+            {t('header.languageSwitch')}
           </button>
         </div>
         <nav className={`primary-nav ${isMenuOpen ? 'active' : ''}`} aria-label="Primary navigation">
