@@ -1,4 +1,6 @@
 import { useTranslation } from 'react-i18next'
+import AnimatedSection from '../components/AnimatedSection'
+import TestimonialCarousel from '../components/TestimonialCarousel'
 
 export default function Testimonials() {
   const { t } = useTranslation()
@@ -6,21 +8,14 @@ export default function Testimonials() {
 
   return (
     <section className="testimonials-page">
-      <div className="section-header">
+      <AnimatedSection className="section-header">
         <p className="eyebrow">{t('testimonials.eyebrow')}</p>
         <h1>{t('testimonials.title')}</h1>
         <p>{t('testimonials.description')}</p>
-      </div>
-      <div className="testimonial-grid">
-        {items.map((item) => (
-          <article key={item.name} className="testimonial-card">
-            <p className="testimonial-copy">{item.quote}</p>
-            <p className="testimonial-author">
-              {item.name}, {item.role}
-            </p>
-          </article>
-        ))}
-      </div>
+      </AnimatedSection>
+      <AnimatedSection>
+        <TestimonialCarousel items={items} />
+      </AnimatedSection>
     </section>
   )
 }

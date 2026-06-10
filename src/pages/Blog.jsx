@@ -1,4 +1,5 @@
 import { useTranslation } from 'react-i18next'
+import AnimatedSection from '../components/AnimatedSection'
 
 export default function Blog() {
   const { t } = useTranslation()
@@ -6,17 +7,17 @@ export default function Blog() {
 
   return (
     <section className="blog-page">
-      <div className="section-header">
+      <AnimatedSection className="section-header">
         <p className="eyebrow">{t('blog.eyebrow')}</p>
         <h1>{t('blog.title')}</h1>
         <p>{t('blog.description')}</p>
-      </div>
+      </AnimatedSection>
       <div className="blog-grid">
-        {posts.map((post) => (
-          <article key={post.title} className="blog-card">
+        {posts.map((post, idx) => (
+          <AnimatedSection key={post.title} as="article" className="blog-card" style={{ animationDelay: `${idx * 0.1}s` }}>
             <h2>{post.title}</h2>
             <p>{post.summary}</p>
-          </article>
+          </AnimatedSection>
         ))}
       </div>
     </section>

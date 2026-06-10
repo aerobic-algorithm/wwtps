@@ -1,40 +1,63 @@
+import { useState } from 'react'
 import { useTranslation } from 'react-i18next'
+import AnimatedSection from '../components/AnimatedSection'
+import GalleryLightbox from '../components/GalleryLightbox'
 import { gallery } from '../data/gallery'
 
 export default function Gallery() {
   const { t } = useTranslation()
   const translatedItems = t('gallery.items', { returnObjects: true })
+  const [lightboxIndex, setLightboxIndex] = useState(null)
+
+  const items = gallery.map((item, idx) => {
+    const ti = translatedItems[idx]
+    return {
+      ...item,
+      title: ti?.title || item.title,
+      location: ti?.location || item.location,
+      summary: ti?.summary || item.summary,
+      image: `${import.meta.env.BASE_URL}${item.image}`,
+    }
+  })
+
+  function closeLightbox() { setLightboxIndex(null) }
+  function prev() { setLightboxIndex((i) => (i - 1 + items.length) % items.length) }
+  function next() { setLightboxIndex((i) => (i + 1) % items.length) }
 
   return (
     <section className="gallery-page">
-      <div className="section-header">
+      <AnimatedSection className="section-header">
         <p className="eyebrow">{t('gallery.eyebrow')}</p>
         <h1>{t('gallery.title')}</h1>
         <p>{t('gallery.description')}</p>
-      </div>
+      </AnimatedSection>
 
       <div className="gallery-layout container">
         <div className="gallery-grid">
-          {gallery.map((item, idx) => {
-            const ti = translatedItems[idx]
-            return (
-            <article key={item.id} className="gallery-card">
-              <div className="gallery-media">
-                <img src={item.image} alt={ti?.title || item.title} />
-              </div>
-              <div className="gallery-body">
-                <h3>{ti?.title || item.title}</h3>
-                <p className="meta">
-                  {ti?.location || item.location} • {item.year}
-                </p>
-                <p>{ti?.summary || item.summary}</p>
-              </div>
-            </article>
-            )
-          })}
+          {items.map((item, idx) => (
+            <AnimatedSection key={item.id} as="article" className="gallery-card" style={{ animationDelay: `${idx * 0.1}s` }}>
+              <button
+                type="button"
+                className="gallery-card-btn"
+                onClick={() => setLightboxIndex(idx)}
+                aria-label={`View ${item.title}`}
+              >
+                <div className="gallery-media">
+                  <img src={item.image} alt={item.title} />
+                </div>
+                <div className="gallery-body">
+                  <h3>{item.title}</h3>
+                  <p className="meta">
+                    {item.location} &bull; {item.year}
+                  </p>
+                  <p>{item.summary}</p>
+                </div>
+              </button>
+            </AnimatedSection>
+          ))}
         </div>
 
-        <aside className="downloads-panel">
+        <AnimatedSection as="aside" className="downloads-panel">
           <p className="eyebrow">{t('gallery.downloadsEyebrow')}</p>
           <h2>{t('gallery.downloadsTitle')}</h2>
           <p>{t('gallery.downloadsDescription')}</p>
@@ -68,8 +91,18 @@ export default function Gallery() {
               </a>
             </li>
           </ul>
-        </aside>
+        </AnimatedSection>
       </div>
+
+      {lightboxIndex !== null && (
+        <GalleryLightbox
+          items={items}
+          currentIndex={lightboxIndex}
+          onClose={closeLightbox}
+          onPrev={prev}
+          onNext={next}
+        />
+      )}
     </section>
   )
 }

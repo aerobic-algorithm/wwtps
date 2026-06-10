@@ -1,5 +1,6 @@
 import { useTranslation } from 'react-i18next'
 import ServiceCard from '../components/ServiceCard'
+import AnimatedSection from '../components/AnimatedSection'
 import { services } from '../data/services'
 
 export default function Services() {
@@ -8,19 +9,20 @@ export default function Services() {
 
   return (
     <section className="services-page">
-      <div className="section-header">
+      <AnimatedSection className="section-header">
         <p className="eyebrow">{t('services.eyebrow')}</p>
         <h1>{t('services.title')}</h1>
         <p>{t('services.description')}</p>
-      </div>
+      </AnimatedSection>
       <div className="services-grid">
         {services.map((service, idx) => (
-          <ServiceCard
-            key={service.title}
-            {...service}
-            title={translatedServices[idx]?.title || service.title}
-            description={translatedServices[idx]?.description || service.description}
-          />
+          <AnimatedSection key={service.title} style={{ animationDelay: `${idx * 0.08}s` }}>
+            <ServiceCard
+              {...service}
+              title={translatedServices[idx]?.title || service.title}
+              description={translatedServices[idx]?.description || service.description}
+            />
+          </AnimatedSection>
         ))}
       </div>
     </section>

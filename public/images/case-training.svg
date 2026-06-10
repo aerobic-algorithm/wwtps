@@ -1,0 +1,26 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 500">
+  <defs>
+    <linearGradient id="bg3" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#7a4a1a"/>
+      <stop offset="100%" style="stop-color:#c9772e"/>
+    </linearGradient>
+  </defs>
+  <rect width="800" height="500" fill="url(#bg3)"/>
+  <g fill="rgba(255,255,255,0.06)">
+    <circle cx="300" cy="350" r="200"/>
+    <circle cx="650" cy="100" r="100"/>
+  </g>
+  <g stroke="rgba(255,255,255,0.15)" stroke-width="2" fill="none">
+    <path d="M0 370 Q200 330 400 370 Q600 410 800 370 L800 500 L0 500 Z"/>
+    <path d="M0 420 Q200 390 400 420 Q600 450 800 420" stroke-width="1" opacity="0.5"/>
+  </g>
+  <g transform="translate(400,220)" text-anchor="middle" font-family="system-ui,sans-serif">
+    <rect x="-80" y="-60" width="160" height="120" rx="16" fill="rgba(255,255,255,0.12)" stroke="rgba(255,255,255,0.2)" stroke-width="2"/>
+    <circle cx="400" cy="-32" r="18" fill="rgba(255,255,255,0.15)"/>
+    <ellipse cx="400" cy="-8" rx="24" ry="12" fill="rgba(255,255,255,0.12)"/>
+    <rect x="-30" y="10" width="60" height="6" rx="3" fill="rgba(255,255,255,0.18)"/>
+    <rect x="-25" y="22" width="50" height="6" rx="3" fill="rgba(255,255,255,0.18)"/>
+    <rect x="-35" y="36" width="70" height="8" rx="4" fill="rgba(255,255,255,0.15)"/>
+    <text y="80" fill="rgba(255,255,255,0.5)" font-size="13">Operator Training &amp; Commissioning</text>
+  </g>
+</svg>

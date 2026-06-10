@@ -6,7 +6,7 @@ export const gallery = [
     location: 'Addis Ababa, Ethiopia',
     summary:
       'Upgraded aeration, secondary clarification, and chemical dosing systems to improve BOD and nutrient removal for a 10 MLD plant.',
-    image: '/wwtps/images/case-municipal.jpg',
+    image: 'images/case-municipal.svg',
   },
   {
     id: 'case2',
@@ -15,7 +15,7 @@ export const gallery = [
     location: 'Dar es Salaam, Tanzania',
     summary:
       'Delivered a compact pretreatment and equalization solution for a food processing facility, reducing TSS and fat/oil loads before discharge.',
-    image: '/wwtps/images/case-industrial.jpg',
+    image: 'images/case-industrial.svg',
   },
   {
     id: 'case3',
@@ -24,6 +24,6 @@ export const gallery = [
     location: 'Nairobi, Kenya',
     summary:
       'Provided on-site operator training, startup support, and instrumentation tuning to achieve stable nitrification within startup window.',
-    image: '/wwtps/images/case-training.jpg',
+    image: 'images/case-training.svg',
   },
 ]
