@@ -1,11 +1,19 @@
 import { Link, NavLink } from 'react-router-dom'
 import { useState } from 'react'
+import { useTranslation } from 'react-i18next'
 
 export default function Header() {
   const [isMenuOpen, setIsMenuOpen] = useState(false)
+  const { t, i18n } = useTranslation()
 
   const toggleMenu = () => {
     setIsMenuOpen(!isMenuOpen)
+  }
+
+  const toggleLanguage = () => {
+    const newLanguage = i18n.language === 'en' ? 'am' : 'en'
+    i18n.changeLanguage(newLanguage)
+    localStorage.setItem('language', newLanguage)
   }
 
   return (
@@ -14,34 +22,44 @@ export default function Header() {
         <Link className="brand" to="/">
           Hub Wastewater Solutions
         </Link>
-        <button 
-          className={`menu-toggle ${isMenuOpen ? 'active' : ''}`}
-          onClick={toggleMenu}
-          aria-label="Toggle navigation"
-          aria-expanded={isMenuOpen}
-        >
-          <span></span>
-          <span></span>
-          <span></span>
-        </button>
+        <div className="header-controls">
+          <button 
+            className="lang-toggle"
+            onClick={toggleLanguage}
+            aria-label="Toggle language"
+            title={`Switch to ${i18n.language === 'en' ? 'Amharic' : 'English'}`}
+          >
+            {t('header.languageSwitch')}
+          </button>
+          <button 
+            className={`menu-toggle ${isMenuOpen ? 'active' : ''}`}
+            onClick={toggleMenu}
+            aria-label="Toggle navigation"
+            aria-expanded={isMenuOpen}
+          >
+            <span></span>
+            <span></span>
+            <span></span>
+          </button>
+        </div>
         <nav className={`primary-nav ${isMenuOpen ? 'active' : ''}`} aria-label="Primary navigation">
           <NavLink to="/" end className={({ isActive }) => (isActive ? 'nav-link active' : 'nav-link')}>
-            Home
+            {t('header.home')}
           </NavLink>
           <NavLink to="/about" className={({ isActive }) => (isActive ? 'nav-link active' : 'nav-link')}>
-            About
+            {t('header.about')}
           </NavLink>
           <NavLink to="/services" className={({ isActive }) => (isActive ? 'nav-link active' : 'nav-link')}>
-            Services
+            {t('header.services')}
           </NavLink>
           <NavLink to="/team" className={({ isActive }) => (isActive ? 'nav-link active' : 'nav-link')}>
-            Team
+            {t('header.team')}
           </NavLink>
           <NavLink to="/gallery" className={({ isActive }) => (isActive ? 'nav-link active' : 'nav-link')}>
-            Case Studies
+            {t('header.caseStudies')}
           </NavLink>
           <NavLink to="/contact" className={({ isActive }) => (isActive ? 'nav-link active' : 'nav-link')}>
-            Contact
+            {t('header.contact')}
           </NavLink>
         </nav>
       </div>

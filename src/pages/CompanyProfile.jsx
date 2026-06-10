@@ -1,47 +1,34 @@
+import { useTranslation } from 'react-i18next'
 import WaveDivider from '../components/WaveDivider'
 
 export default function CompanyProfile() {
+  const { t } = useTranslation()
+  const panels = t('about.panels', { returnObjects: true })
+
   return (
     <section className="company-page">
       <div className="section-header">
-        <p className="eyebrow">About Hub Wastewater Solutions</p>
-        <h1>Engineering wastewater systems with resilience in mind.</h1>
-        <p>
-          Our team brings decades of operational experience from industrial,
-          municipal, and advanced treatment facilities. We specialize in
-          pragmatic recommendations, reliable commissioning, and operator
-          training.
-        </p>
+        <p className="eyebrow">{t('about.eyebrow')}</p>
+        <h1>{t('about.title')}</h1>
+        <p>{t('about.description')}</p>
       </div>
 
       <WaveDivider className="section-divider invert" />
 
       <div className="content-grid">
-        <div className="content-panel">
-          <h2>Our mission</h2>
-          <p>
-            Help water and wastewater organizations improve performance with
-            clear process insight, actionable service plans, and hands-on site
-            support.
-          </p>
-        </div>
-        <div className="content-panel">
-          <h2>Core expertise</h2>
-          <ul>
-            <li>Biological and chemical treatment optimization</li>
-            <li>Test & commissioning for new equipment and upgrades</li>
-            <li>Process troubleshooting and startup support</li>
-            <li>Operations training and plant transfer guidance</li>
-          </ul>
-        </div>
-        <div className="content-panel">
-          <h2>Certifications</h2>
-          <ul>
-            <li>ISO 9001-inspired quality management practices</li>
-            <li>OSHA-compliant field safety procedures</li>
-            <li>State-approved wastewater operator training curricula</li>
-          </ul>
-        </div>
+        {panels.map((panel, idx) => (
+          <div key={idx} className="content-panel">
+            <h2>{panel.title}</h2>
+            {panel.content && <p>{panel.content}</p>}
+            {panel.items && (
+              <ul>
+                {panel.items.map((item, i) => (
+                  <li key={i}>{item}</li>
+                ))}
+              </ul>
+            )}
+          </div>
+        ))}
       </div>
     </section>
   )

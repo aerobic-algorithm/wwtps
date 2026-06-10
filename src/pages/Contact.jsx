@@ -1,13 +1,13 @@
 import { useState } from 'react'
 import { useForm } from 'react-hook-form'
+import { useTranslation } from 'react-i18next'
 import { FaTelegramPlane, FaWhatsapp } from 'react-icons/fa'
 import { HiOutlineClipboardDocument, HiOutlineEnvelope, HiOutlinePhone } from 'react-icons/hi2'
 
 const FORM_ENDPOINT = 'https://formspree.io/f/your-form-id'
-const WHATSAPP_NUMBER = '1234567890' // Replace with your WhatsApp number
-const TELEGRAM_USERNAME = 'your_telegram_username' // Replace with your Telegram username
 
 export default function Contact() {
+  const { t } = useTranslation()
   const [status, setStatus] = useState(null)
   const [copied, setCopied] = useState('')
   const {
@@ -51,12 +51,9 @@ export default function Contact() {
   return (
     <section className="contact-page">
       <div className="section-header">
-        <p className="eyebrow">Contact</p>
-        <h1>Send a project brief or request an operations review.</h1>
-        <p>
-          Use the form below to request a proposal, schedule a consultation,
-          or ask about a plant survey.
-        </p>
+        <p className="eyebrow">{t('contact.eyebrow')}</p>
+        <h1>{t('contact.title')}</h1>
+        <p>{t('contact.description')}</p>
       </div>
 
       <div className="contact-channels">
@@ -69,8 +66,8 @@ export default function Contact() {
           <div className="channel-icon">
             <FaWhatsapp size={28} />
           </div>
-          <h3>WhatsApp</h3>
-          <p>Chat with us on WhatsApp for quick responses</p>
+          <h3>{t('contact.whatsappTitle')}</h3>
+          <p>{t('contact.whatsapp')}</p>
         </a>
 
         <a
@@ -82,15 +79,15 @@ export default function Contact() {
           <div className="channel-icon">
             <FaTelegramPlane size={28} />
           </div>
-          <h3>Telegram</h3>
-          <p>Reach us on Telegram for instant messaging</p>
+          <h3>{t('contact.telegramTitle')}</h3>
+          <p>{t('contact.telegram')}</p>
         </a>
 
         <div className="channel-card email">
           <div className="channel-icon">
             <HiOutlineEnvelope />
           </div>
-          <h3>Email</h3>
+          <h3>{t('contact.emailTitle')}</h3>
           <div className="contact-line">
             <a href="mailto:hubs4solutions@gmail.com" className="contact-link">
               hubs4solutions@gmail.com
@@ -104,14 +101,14 @@ export default function Contact() {
               <HiOutlineClipboardDocument />
             </button>
           </div>
-          {copied === 'hubs4solutions@gmail.com' && <span className="copy-feedback">Copied!</span>}
+          {copied === 'hubs4solutions@gmail.com' && <span className="copy-feedback">{t('contact.copied')}</span>}
         </div>
 
         <div className="channel-card phone">
           <div className="channel-icon">
             <HiOutlinePhone />
           </div>
-          <h3>Phone</h3>
+          <h3>{t('contact.phoneTitle')}</h3>
           <div className="contact-line">
             <a href="tel:+251946776979" className="contact-link">
               +251-946-776-979
@@ -125,7 +122,7 @@ export default function Contact() {
               <HiOutlineClipboardDocument />
             </button>
           </div>
-          {copied === '+251-946-776-979' && <span className="copy-feedback">Copied!</span>}
+          {copied === '+251-946-776-979' && <span className="copy-feedback">{t('contact.copied')}</span>}
           <div className="contact-line">
             <a href="tel:+251913112204" className="contact-link">
               +251-913-112-204
@@ -139,19 +136,19 @@ export default function Contact() {
               <HiOutlineClipboardDocument />
             </button>
           </div>
-          {copied === '+251-913-112-204' && <span className="copy-feedback">Copied!</span>}
+          {copied === '+251-913-112-204' && <span className="copy-feedback">{t('contact.copied')}</span>}
         </div>
       </div>
 
       <div className="contact-grid">
         <form className="contact-form" onSubmit={handleSubmit(onSubmit)}>
           <label>
-            Name
+            {t('contact.formName')}
             <input type="text" {...register('name', { required: true })} />
-            {errors.name && <span className="field-error">Required</span>}
+            {errors.name && <span className="field-error">{t('contact.formErrorRequired')}</span>}
           </label>
           <label>
-            Email
+            {t('contact.formEmail')}
             <input
               type="email"
               {...register('email', {
@@ -159,33 +156,33 @@ export default function Contact() {
                 pattern: /^[^\s@]+@[^\s@]+\.[^\s@]+$/,
               })}
             />
-            {errors.email && <span className="field-error">Enter a valid email</span>}
+            {errors.email && <span className="field-error">{t('contact.formErrorEmail')}</span>}
           </label>
           <label>
-            Company
+            {t('contact.formCompany')}
             <input type="text" {...register('company')} />
           </label>
           <label>
-            Message
+            {t('contact.formMessage')}
             <textarea rows="6" {...register('message', { required: true })} />
-            {errors.message && <span className="field-error">Required</span>}
+            {errors.message && <span className="field-error">{t('contact.formErrorRequired')}</span>}
           </label>
           <button type="submit" className="form-submit" disabled={isSubmitting}>
-            {isSubmitting ? 'Sending...' : 'Send message'}
+            {isSubmitting ? t('contact.formSending') : t('contact.formSend')}
           </button>
-          {status === 'success' && <p className="form-status success">Message received — we will reply shortly.</p>}
-          {status === 'error' && <p className="form-status error">Unable to send message. Please try again later.</p>}
+          {status === 'success' && <p className="form-status success">{t('contact.formSuccess')}</p>}
+          {status === 'error' && <p className="form-status error">{t('contact.formError')}</p>}
         </form>
 
         <aside className="contact-details">
           <div>
-            <h2>Office</h2>
-            <p>Addis Ababa</p>
-            <p>Ethiopia</p>
+            <h2>{t('contact.office')}</h2>
+            <p>{t('contact.city')}</p>
+            <p>{t('contact.country')}</p>
           </div>
           <div>
-            <h2>Office hours</h2>
-            <p>Mon–Fri, 8:00 AM – 5:00 PM PT</p>
+            <h2>{t('contact.officeHours')}</h2>
+            <p>{t('contact.officeHoursValue')}</p>
           </div>
         </aside>
       </div>

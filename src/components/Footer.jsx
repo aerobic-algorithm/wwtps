@@ -1,10 +1,14 @@
+import { useTranslation } from 'react-i18next'
+
 export default function Footer() {
+  const { t } = useTranslation()
+
   return (
     <footer className="site-footer">
       <div className="container footer-inner">
         <div>
           <p className="footer-brand">Hub Wastewater Solutions</p>
-          <p>Wastewater treatment consulting, commissioning, and operations support.</p>
+          <p>{t('footer.tagline')}</p>
           <div className="social-links">
             <a href="https://www.facebook.com" target="_blank" rel="noopener noreferrer" aria-label="Facebook">
               <i className="fab fa-facebook-f"></i>
@@ -17,7 +21,7 @@ export default function Footer() {
             </a>
           </div>
         </div>
-        <p className="footer-copy">Designed for fast deployment and clean operations.</p>
+        <p className="footer-copy">{t('footer.designCredit')}</p>
       </div>
     </footer>
   )

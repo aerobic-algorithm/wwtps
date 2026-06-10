@@ -1,69 +1,70 @@
+import { useTranslation } from 'react-i18next'
 import { gallery } from '../data/gallery'
 
 export default function Gallery() {
+  const { t } = useTranslation()
+  const translatedItems = t('gallery.items', { returnObjects: true })
+
   return (
     <section className="gallery-page">
       <div className="section-header">
-        <p className="eyebrow">Case Studies</p>
-        <h1>Project highlights in wastewater treatment</h1>
-        <p>
-          A selection of recent projects showcasing process upgrades, industrial
-          pretreatment, and commissioning & training work.
-        </p>
+        <p className="eyebrow">{t('gallery.eyebrow')}</p>
+        <h1>{t('gallery.title')}</h1>
+        <p>{t('gallery.description')}</p>
       </div>
 
       <div className="gallery-layout container">
         <div className="gallery-grid">
-          {gallery.map((item) => (
+          {gallery.map((item, idx) => {
+            const ti = translatedItems[idx]
+            return (
             <article key={item.id} className="gallery-card">
               <div className="gallery-media">
-                <img src={item.image} alt={item.title} />
+                <img src={item.image} alt={ti?.title || item.title} />
               </div>
               <div className="gallery-body">
-                <h3>{item.title}</h3>
+                <h3>{ti?.title || item.title}</h3>
                 <p className="meta">
-                  {item.location} • {item.year}
+                  {ti?.location || item.location} • {item.year}
                 </p>
-                <p>{item.summary}</p>
+                <p>{ti?.summary || item.summary}</p>
               </div>
             </article>
-          ))}
+            )
+          })}
         </div>
 
         <aside className="downloads-panel">
-          <p className="eyebrow">Downloads</p>
-          <h2>Helpful resources for wastewater teams</h2>
-          <p>
-            Download our brochure, wastewater facts, and a curated set of non-proprietary
-            treatment documents to support planning, training, and project review.
-          </p>
+          <p className="eyebrow">{t('gallery.downloadsEyebrow')}</p>
+          <h2>{t('gallery.downloadsTitle')}</h2>
+          <p>{t('gallery.downloadsDescription')}</p>
 
           <ul className="download-list">
             <li className="download-item">
               <div>
-                <strong>Brochure pack</strong>
-                <p>Overview of our services, process strengths, and engagement approach.</p>
+                <strong>{t('gallery.brochureName')}</strong>
+                <p>{t('gallery.brochureDesc')}</p>
               </div>
               <a href="/downloads/hub-wastewater-brochure.txt" download className="download-link">
-                Download
+                {t('gallery.download')}
               </a>
             </li>
             <li className="download-item">
               <div>
-                <strong>Wastewater facts</strong>
-                <p>Key treatment metrics and process benchmarks for utilities and industry.</p>
+                <strong>{t('gallery.wastewaterFactsName')}</strong>
+                <p>{t('gallery.wastewaterFactsDesc')}</p>
               </div>
               <a href="/downloads/wastewater-facts.txt" download className="download-link">
-                Download
+                {t('gallery.download')}
               </a>
             </li>
             <li className="download-item">
               <div>
-                <strong>Non-proprietary documents</strong>
-                <p>Open-source treatment resources and guidance for operational improvement.</p>
+                <strong>{t('gallery.nonPropName')}</strong>
+                <p>{t('gallery.nonPropDesc')}</p>
               </div>
               <a href="/downloads/non-proprietary-documents.txt" download className="download-link">
-                Download
+                {t('gallery.download')}
               </a>
             </li>
           </ul>
