@@ -1477,6 +1477,19 @@ button {
     margin-top: 12px;
   }
 
+  .mobile-nav-tools {
+    display: flex;
+    gap: 8px;
+    padding-bottom: 12px;
+    border-bottom: 1px solid var(--border);
+    margin-bottom: 4px;
+  }
+
+  .header-controls .header-icon-btn,
+  .header-controls .dark-toggle {
+    display: none;
+  }
+
   .primary-nav.active {
     display: flex;
   }
@@ -1543,6 +1556,11 @@ button {
   .contact-link {
     font-size: 0.95rem;
   }
+}
+
+/* Mobile nav tools (search + dark mode inside hamburger panel) */
+.mobile-nav-tools {
+  display: none;
 }
 
 /* Header icon button (search, dark mode) */

@@ -56,22 +56,33 @@ export default function Header() {
           </button>
         </div>
         <nav className={`primary-nav ${isMenuOpen ? 'active' : ''}`} aria-label="Primary navigation">
-          <NavLink to="/" end className={({ isActive }) => (isActive ? 'nav-link active' : 'nav-link')}>
+          <div className="mobile-nav-tools">
+            <button
+              className="header-icon-btn"
+              onClick={() => { setSearchOpen(true); setIsMenuOpen(false) }}
+              aria-label="Open search"
+              title="Search"
+            >
+              <HiOutlineMagnifyingGlass size={18} />
+            </button>
+            <DarkModeToggle />
+          </div>
+          <NavLink to="/" end className={({ isActive }) => (isActive ? 'nav-link active' : 'nav-link')} onClick={() => setIsMenuOpen(false)}>
             {t('header.home')}
           </NavLink>
-          <NavLink to="/about" className={({ isActive }) => (isActive ? 'nav-link active' : 'nav-link')}>
+          <NavLink to="/about" className={({ isActive }) => (isActive ? 'nav-link active' : 'nav-link')} onClick={() => setIsMenuOpen(false)}>
             {t('header.about')}
           </NavLink>
-          <NavLink to="/services" className={({ isActive }) => (isActive ? 'nav-link active' : 'nav-link')}>
+          <NavLink to="/services" className={({ isActive }) => (isActive ? 'nav-link active' : 'nav-link')} onClick={() => setIsMenuOpen(false)}>
             {t('header.services')}
           </NavLink>
-          <NavLink to="/team" className={({ isActive }) => (isActive ? 'nav-link active' : 'nav-link')}>
+          <NavLink to="/team" className={({ isActive }) => (isActive ? 'nav-link active' : 'nav-link')} onClick={() => setIsMenuOpen(false)}>
             {t('header.team')}
           </NavLink>
-          <NavLink to="/gallery" className={({ isActive }) => (isActive ? 'nav-link active' : 'nav-link')}>
+          <NavLink to="/gallery" className={({ isActive }) => (isActive ? 'nav-link active' : 'nav-link')} onClick={() => setIsMenuOpen(false)}>
             {t('header.caseStudies')}
           </NavLink>
-          <NavLink to="/contact" className={({ isActive }) => (isActive ? 'nav-link active' : 'nav-link')}>
+          <NavLink to="/contact" className={({ isActive }) => (isActive ? 'nav-link active' : 'nav-link')} onClick={() => setIsMenuOpen(false)}>
             {t('header.contact')}
           </NavLink>
         </nav>
