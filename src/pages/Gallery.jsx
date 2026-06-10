@@ -1,5 +1,6 @@
 import { useState } from 'react'
 import { useTranslation } from 'react-i18next'
+import Seo from '../components/Seo'
 import AnimatedSection from '../components/AnimatedSection'
 import GalleryLightbox from '../components/GalleryLightbox'
 import { gallery } from '../data/gallery'
@@ -26,6 +27,8 @@ export default function Gallery() {
 
   return (
     <section className="gallery-page">
+      <Seo title="Case Studies" description={t('gallery.description')} path="/gallery" />
+
       <AnimatedSection className="section-header">
         <p className="eyebrow">{t('gallery.eyebrow')}</p>
         <h1>{t('gallery.title')}</h1>

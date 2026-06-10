@@ -3,6 +3,8 @@ import { useForm } from 'react-hook-form'
 import { useTranslation } from 'react-i18next'
 import { FaTelegramPlane, FaWhatsapp } from 'react-icons/fa'
 import { HiOutlineClipboardDocument, HiOutlineEnvelope, HiOutlinePhone } from 'react-icons/hi2'
+import Seo from '../components/Seo'
+import MapEmbed from '../components/MapEmbed'
 
 const FORM_ENDPOINT = 'https://formspree.io/f/your-form-id'
 
@@ -50,6 +52,8 @@ export default function Contact() {
 
   return (
     <section className="contact-page">
+      <Seo title="Contact" description={t('contact.description')} path="/contact" />
+
       <div className="section-header">
         <p className="eyebrow">{t('contact.eyebrow')}</p>
         <h1>{t('contact.title')}</h1>
@@ -179,6 +183,7 @@ export default function Contact() {
             <h2>{t('contact.office')}</h2>
             <p>{t('contact.city')}</p>
             <p>{t('contact.country')}</p>
+            <MapEmbed />
           </div>
           <div>
             <h2>{t('contact.officeHours')}</h2>

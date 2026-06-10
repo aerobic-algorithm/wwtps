@@ -26,7 +26,7 @@ export const team = [
   {
     name: 'Solomon Kore',
     role: 'Civil Engineer',
-    bio: '..',
-    skills: ['Mangement', 'Communication', 'Coordination'],
+    bio: 'Leads project management, stakeholder communication, and field coordination for multi-disciplinary treatment projects.',
+    skills: ['Management', 'Communication', 'Coordination'],
   },
 ]

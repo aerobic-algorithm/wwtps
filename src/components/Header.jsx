@@ -1,9 +1,13 @@
 import { Link, NavLink } from 'react-router-dom'
 import { useState } from 'react'
 import { useTranslation } from 'react-i18next'
+import { HiOutlineMagnifyingGlass } from 'react-icons/hi2'
+import DarkModeToggle from './DarkModeToggle'
+import SearchOverlay from './SearchOverlay'
 
 export default function Header() {
   const [isMenuOpen, setIsMenuOpen] = useState(false)
+  const [searchOpen, setSearchOpen] = useState(false)
   const { t, i18n } = useTranslation()
 
   const toggleMenu = () => {
@@ -23,7 +27,7 @@ export default function Header() {
           Hub Wastewater Solutions
         </Link>
         <div className="header-controls">
-          <button 
+          <button
             className={`menu-toggle ${isMenuOpen ? 'active' : ''}`}
             onClick={toggleMenu}
             aria-label="Toggle navigation"
@@ -33,7 +37,16 @@ export default function Header() {
             <span></span>
             <span></span>
           </button>
-          <button 
+          <button
+            className="header-icon-btn"
+            onClick={() => setSearchOpen(true)}
+            aria-label="Open search"
+            title="Search"
+          >
+            <HiOutlineMagnifyingGlass size={18} />
+          </button>
+          <DarkModeToggle />
+          <button
             className="lang-toggle"
             onClick={toggleLanguage}
             aria-label="Toggle language"
@@ -63,6 +76,8 @@ export default function Header() {
           </NavLink>
         </nav>
       </div>
+
+      {searchOpen && <SearchOverlay onClose={() => setSearchOpen(false)} />}
     </header>
   )
 }

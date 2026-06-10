@@ -1,5 +1,6 @@
 import { HiOutlineSparkles, HiOutlineRocketLaunch, HiOutlineShieldCheck } from 'react-icons/hi2'
 import { useTranslation } from 'react-i18next'
+import Seo from '../components/Seo'
 import ServiceCard from '../components/ServiceCard'
 import CTAButton from '../components/CTAButton'
 import WaveDivider from '../components/WaveDivider'
@@ -12,6 +13,8 @@ export default function Home() {
 
   return (
     <section className="home-page">
+      <Seo title="Home" description={t('home.description')} path="/" />
+
       <div className="hero-panel">
         <AnimatedSection className="hero-copy" fadeUp={false}>
           <p className="eyebrow">{t('home.eyebrow')}</p>

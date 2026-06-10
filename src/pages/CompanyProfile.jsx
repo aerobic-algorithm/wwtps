@@ -1,4 +1,5 @@
 import { useTranslation } from 'react-i18next'
+import Seo from '../components/Seo'
 import WaveDivider from '../components/WaveDivider'
 import AnimatedSection from '../components/AnimatedSection'
 
@@ -8,6 +9,8 @@ export default function CompanyProfile() {
 
   return (
     <section className="company-page">
+      <Seo title={t('about.title')} description={t('about.description')} path="/about" />
+
       <AnimatedSection className="section-header">
         <p className="eyebrow">{t('about.eyebrow')}</p>
         <h1>{t('about.title')}</h1>
