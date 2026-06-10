@@ -29,5 +29,6 @@ npm run deploy   # gh-pages -d dist (publishes to GitHub Pages)
 - **No tests** — no test framework is installed.
 - **No typecheck step** — TypeScript types (`@types/react`) exist for editor hints only; source is `.jsx`.
 - Contact form at `src/pages/Contact.jsx` sends to Formspree — replace placeholder `FORM_ENDPOINT` before use.
+- Plausible analytics script in `index.html` — currently set to `aerobic-algorithm.github.io` — update if you add a custom domain.
 - CI (`.github/workflows/deploy.yml`) builds and deploys to GitHub Pages on push to `main`/`master`.
 - Vite production base path is `/wwtps/` (configured in `vite.config.js`).
