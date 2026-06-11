@@ -3,6 +3,7 @@ import { useTranslation } from 'react-i18next'
 import Seo from '../components/Seo'
 import AnimatedSection from '../components/AnimatedSection'
 import GalleryLightbox from '../components/GalleryLightbox'
+import ProjectTimeline from '../components/ProjectTimeline'
 import { gallery } from '../data/gallery'
 
 export default function Gallery() {
@@ -34,6 +35,8 @@ export default function Gallery() {
         <h1>{t('gallery.title')}</h1>
         <p>{t('gallery.description')}</p>
       </AnimatedSection>
+
+      <ProjectTimeline items={items} />
 
       <div className="gallery-layout container">
         <div className="gallery-grid">
