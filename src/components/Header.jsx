@@ -85,6 +85,9 @@ export default function Header() {
           <NavLink to="/contact" className={({ isActive }) => (isActive ? 'nav-link active' : 'nav-link')} onClick={() => setIsMenuOpen(false)}>
             {t('header.contact')}
           </NavLink>
+          <NavLink to="/blog" className={({ isActive }) => (isActive ? 'nav-link active' : 'nav-link')} onClick={() => setIsMenuOpen(false)}>
+            {t('header.blog')}
+          </NavLink>
         </nav>
       </div>
 
