@@ -1,4 +1,5 @@
 import { useEffect, useCallback } from 'react'
+import { FaLinkedin } from 'react-icons/fa'
 import { HiOutlineXMark, HiOutlineEnvelope } from 'react-icons/hi2'
 import { useTranslation } from 'react-i18next'
 import { Link } from 'react-router-dom'
@@ -46,6 +47,19 @@ export default function TeamModal({ member, onClose }) {
               <span key={skill} className="skill-pill">{skill}</span>
             ))}
           </div>
+        )}
+
+        {member.linkedin && (
+          <a
+            href={member.linkedin}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="modal-linkedin"
+            aria-label={`${member.name} on LinkedIn`}
+          >
+            <FaLinkedin size={18} />
+            LinkedIn
+          </a>
         )}
 
         <Link to="/contact" className="modal-contact-btn" onClick={onClose}>

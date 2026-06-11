@@ -1,4 +1,6 @@
-export default function TeamCard({ name, role, bio, skills, avatar }) {
+import { FaLinkedin } from 'react-icons/fa'
+
+export default function TeamCard({ name, role, bio, skills, avatar, linkedin }) {
   const initials = name
     .split(' ')
     .map((part) => part[0])
@@ -14,6 +16,17 @@ export default function TeamCard({ name, role, bio, skills, avatar }) {
         <h3>{name}</h3>
         <p className="team-role">{role}</p>
         <p>{bio}</p>
+        {linkedin && (
+          <a
+            href={linkedin}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="team-linkedin"
+            aria-label={`${name} on LinkedIn`}
+          >
+            <FaLinkedin />
+          </a>
+        )}
         <div className="team-skills">
           {skills.map((skill) => (
             <span key={skill} className="skill-pill">

@@ -1,12 +1,37 @@
 import { useParams, Link } from 'react-router-dom'
 import { useTranslation } from 'react-i18next'
+import { FaLinkedin, FaTwitter, FaFacebook } from 'react-icons/fa'
 import { getPostBySlug } from '../data/posts'
 import Seo from '../components/Seo'
+
+const SHARE_SITES = [
+  {
+    id: 'linkedin',
+    icon: FaLinkedin,
+    href: (url) => `https://www.linkedin.com/sharing/share-offsite/?url=${encodeURIComponent(url)}`,
+    label: 'LinkedIn',
+  },
+  {
+    id: 'twitter',
+    icon: FaTwitter,
+    href: (url, title) => `https://twitter.com/intent/tweet?text=${encodeURIComponent(title)}&url=${encodeURIComponent(url)}`,
+    label: 'Twitter',
+  },
+  {
+    id: 'facebook',
+    icon: FaFacebook,
+    href: (url) => `https://www.facebook.com/sharer/sharer.php?u=${encodeURIComponent(url)}`,
+    label: 'Facebook',
+  },
+]
 
 export default function BlogPost() {
   const { slug } = useParams()
   const { t } = useTranslation()
   const post = getPostBySlug(slug)
+
+  const shareUrl = typeof window !== 'undefined' ? window.location.href : ''
+  const shareTitle = post?.title || ''
 
   if (!post) {
     return (
@@ -47,6 +72,30 @@ export default function BlogPost() {
           return <p key={i}>{p}</p>
         })}
       </div>
+
+      {shareUrl && (
+        <div className="share-buttons">
+          <p className="share-label">Share this post</p>
+          <div className="share-row">
+            {SHARE_SITES.map((site) => {
+              const Icon = site.icon
+              return (
+                <a
+                  key={site.id}
+                  href={site.href(shareUrl, shareTitle)}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="share-btn"
+                  aria-label={`Share on ${site.label}`}
+                >
+                  <Icon />
+                  <span>{site.label}</span>
+                </a>
+              )
+            })}
+          </div>
+        </div>
+      )}
     </article>
   )
 }
