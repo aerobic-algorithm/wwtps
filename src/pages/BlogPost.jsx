@@ -1,6 +1,7 @@
 import { useParams, Link } from 'react-router-dom'
 import { useTranslation } from 'react-i18next'
-import { FaLinkedin, FaTwitter, FaFacebook } from 'react-icons/fa'
+import { FaLinkedin, FaFacebook } from 'react-icons/fa'
+import { FaXTwitter } from 'react-icons/fa6'
 import { getPostBySlug } from '../data/posts'
 import Seo from '../components/Seo'
 
@@ -12,10 +13,10 @@ const SHARE_SITES = [
     label: 'LinkedIn',
   },
   {
-    id: 'twitter',
-    icon: FaTwitter,
+    id: 'x',
+    icon: FaXTwitter,
     href: (url, title) => `https://twitter.com/intent/tweet?text=${encodeURIComponent(title)}&url=${encodeURIComponent(url)}`,
-    label: 'Twitter',
+    label: 'X',
   },
   {
     id: 'facebook',
