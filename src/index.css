@@ -1901,6 +1901,212 @@ button {
   color: var(--primary);
 }
 
+/* Process Diagram */
+.process-diagram {
+  margin: 0 auto 56px;
+  max-width: 900px;
+}
+
+.process-diagram-title {
+  text-align: center;
+  margin: 0;
+  font-size: 1.5rem;
+}
+
+.process-diagram-subtitle {
+  text-align: center;
+  color: var(--text-muted);
+  margin: 8px auto 36px;
+  line-height: 1.7;
+  max-width: 600px;
+}
+
+.process-flow {
+  display: flex;
+  align-items: flex-start;
+  justify-content: center;
+  gap: 0;
+  flex-wrap: wrap;
+}
+
+.process-node-wrapper {
+  display: flex;
+  align-items: center;
+  gap: 0;
+}
+
+.process-node {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 10px;
+  padding: 20px 16px;
+  border: 2px solid var(--border);
+  border-radius: 20px;
+  background: var(--bg-surface);
+  cursor: pointer;
+  transition: all 0.25s ease;
+  min-width: 100px;
+  position: relative;
+}
+
+.process-node:hover {
+  border-color: var(--accent-soft);
+  transform: translateY(-3px);
+  box-shadow: var(--shadow);
+}
+
+.process-node.active {
+  border-color: var(--accent);
+  background: var(--accent-soft);
+  box-shadow: 0 0 0 4px var(--accent-soft), var(--shadow);
+  transform: translateY(-3px);
+}
+
+.process-node-step {
+  position: absolute;
+  top: -10px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 24px;
+  height: 24px;
+  border-radius: 50%;
+  background: var(--primary);
+  color: var(--bg-surface);
+  font-size: 0.75rem;
+  font-weight: 700;
+  display: grid;
+  place-items: center;
+}
+
+.process-node-icon {
+  width: 40px;
+  height: 40px;
+  display: grid;
+  place-items: center;
+  color: var(--primary);
+  font-size: 1.4rem;
+  transition: color 0.25s ease;
+}
+
+.process-node.active .process-node-icon {
+  color: var(--accent);
+}
+
+.process-node-label {
+  font-size: 0.82rem;
+  font-weight: 600;
+  color: var(--text-muted);
+  text-align: center;
+  line-height: 1.3;
+  transition: color 0.25s ease;
+}
+
+.process-node.active .process-node-label {
+  color: var(--text);
+}
+
+.process-arrow {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 32px;
+  flex-shrink: 0;
+  color: var(--border);
+}
+
+.process-arrow svg {
+  animation: arrowPulse 2s ease-in-out infinite;
+}
+
+@keyframes arrowPulse {
+  0%, 100% { opacity: 0.4; }
+  50% { opacity: 1; }
+}
+
+.process-detail {
+  margin-top: 32px;
+  min-height: 100px;
+}
+
+.process-detail-hint {
+  text-align: center;
+  color: var(--text-muted);
+  font-size: 0.95rem;
+  padding: 32px;
+  background: var(--bg-muted);
+  border-radius: 20px;
+  border: 1px dashed var(--border);
+}
+
+.process-detail-card {
+  background: var(--bg-surface);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: 32px;
+  box-shadow: var(--shadow);
+  animation: fadeInUp 0.35s ease;
+}
+
+.process-detail-icon {
+  display: inline-flex;
+  width: 48px;
+  height: 48px;
+  border-radius: 16px;
+  background: var(--accent-soft);
+  color: var(--accent);
+  align-items: center;
+  justify-content: center;
+  font-size: 1.5rem;
+  margin-bottom: 16px;
+}
+
+.process-detail-card h3 {
+  margin: 0 0 12px;
+  font-size: 1.3rem;
+}
+
+.process-detail-desc {
+  margin: 0 0 16px;
+  color: var(--text-muted);
+  line-height: 1.7;
+  font-size: 1.05rem;
+}
+
+.process-detail-body {
+  margin: 0;
+  color: var(--text-muted);
+  line-height: 1.8;
+}
+
+@media (max-width: 768px) {
+  .process-flow {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .process-node-wrapper {
+    flex-direction: column;
+    width: 100%;
+    max-width: 240px;
+  }
+
+  .process-arrow {
+    width: auto;
+    height: 28px;
+    transform: rotate(90deg);
+    padding: 4px 0;
+  }
+
+  .process-node {
+    width: 100%;
+  }
+
+  .process-detail-card {
+    padding: 24px;
+  }
+}
+
 /* Desktop tweak: prefer wider team cards to avoid tall stretched layout */
 @media (min-width: 1100px) {
   .team-grid {

@@ -5,6 +5,7 @@ import ServiceCard from '../components/ServiceCard'
 import AnimatedSection from '../components/AnimatedSection'
 import CategoryFilter from '../components/CategoryFilter'
 import Accordion from '../components/Accordion'
+import ProcessDiagram from '../components/ProcessDiagram'
 import { services, serviceCategories } from '../data/services'
 import { faq } from '../data/faq'
 
@@ -26,6 +27,8 @@ export default function Services() {
         <h1>{t('services.title')}</h1>
         <p>{t('services.description')}</p>
       </AnimatedSection>
+
+      <ProcessDiagram />
 
       <CategoryFilter categories={serviceCategories} active={activeCategory} onChange={setActiveCategory} />
 
