@@ -1464,16 +1464,20 @@ button {
   }
 
   .primary-nav {
-    display: none;
     flex-direction: column;
     width: 100%;
     background: var(--bg-surface);
     backdrop-filter: blur(16px);
     border-bottom: 1px solid var(--border);
     border-radius: 12px;
-    padding: 16px 20px;
+    padding: 0 20px;
     gap: 12px;
     margin-top: 12px;
+    max-height: 0;
+    opacity: 0;
+    overflow: hidden;
+    visibility: hidden;
+    transition: max-height 0.35s ease, opacity 0.35s ease, padding 0.35s ease, visibility 0.35s ease;
   }
 
   .mobile-nav-tools {
@@ -1490,7 +1494,10 @@ button {
   }
 
   .primary-nav.active {
-    display: flex;
+    max-height: 600px;
+    opacity: 1;
+    visibility: visible;
+    padding: 16px 20px;
   }
 
   .nav-link {

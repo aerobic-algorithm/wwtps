@@ -1,5 +1,5 @@
 import { Link, NavLink } from 'react-router-dom'
-import { useState } from 'react'
+import { useEffect, useRef, useState } from 'react'
 import { useTranslation } from 'react-i18next'
 import { HiOutlineMagnifyingGlass } from 'react-icons/hi2'
 import DarkModeToggle from './DarkModeToggle'
@@ -8,7 +8,29 @@ import SearchOverlay from './SearchOverlay'
 export default function Header() {
   const [isMenuOpen, setIsMenuOpen] = useState(false)
   const [searchOpen, setSearchOpen] = useState(false)
+  const navRef = useRef(null)
+  const toggleRef = useRef(null)
   const { t, i18n } = useTranslation()
+
+  useEffect(() => {
+    if (!isMenuOpen) return
+
+    const handleClickOutside = (e) => {
+      if (
+        navRef.current && !navRef.current.contains(e.target) &&
+        toggleRef.current && !toggleRef.current.contains(e.target)
+      ) {
+        setIsMenuOpen(false)
+      }
+    }
+
+    document.addEventListener('mousedown', handleClickOutside)
+    document.addEventListener('touchstart', handleClickOutside)
+    return () => {
+      document.removeEventListener('mousedown', handleClickOutside)
+      document.removeEventListener('touchstart', handleClickOutside)
+    }
+  }, [isMenuOpen])
 
   const toggleMenu = () => {
     setIsMenuOpen(!isMenuOpen)
@@ -28,6 +50,7 @@ export default function Header() {
         </Link>
         <div className="header-controls">
           <button
+            ref={toggleRef}
             className={`menu-toggle ${isMenuOpen ? 'active' : ''}`}
             onClick={toggleMenu}
             aria-label="Toggle navigation"
@@ -55,7 +78,7 @@ export default function Header() {
             {t('header.languageSwitch')}
           </button>
         </div>
-        <nav className={`primary-nav ${isMenuOpen ? 'active' : ''}`} aria-label="Primary navigation">
+        <nav ref={navRef} className={`primary-nav ${isMenuOpen ? 'active' : ''}`} aria-label="Primary navigation">
           <div className="mobile-nav-tools">
             <button
               className="header-icon-btn"
