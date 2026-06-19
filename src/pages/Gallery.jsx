@@ -4,12 +4,15 @@ import Seo from '../components/Seo'
 import AnimatedSection from '../components/AnimatedSection'
 import GalleryLightbox from '../components/GalleryLightbox'
 import ProjectTimeline from '../components/ProjectTimeline'
-import { gallery } from '../data/gallery'
+import CategoryFilter from '../components/CategoryFilter'
+import CTAButton from '../components/CTAButton'
+import { gallery, galleryCategories } from '../data/gallery'
 
 export default function Gallery() {
   const { t } = useTranslation()
   const translatedItems = t('gallery.items', { returnObjects: true })
   const [lightboxIndex, setLightboxIndex] = useState(null)
+  const [activeCategory, setActiveCategory] = useState(null)
 
   const items = gallery.map((item, idx) => {
     const ti = translatedItems[idx]
@@ -22,9 +25,18 @@ export default function Gallery() {
     }
   })
 
+  const filtered = activeCategory
+    ? items.filter((item) => item.category === activeCategory)
+    : items
+
+  function handleCategoryChange(cat) {
+    setActiveCategory(cat)
+    setLightboxIndex(null)
+  }
+
   function closeLightbox() { setLightboxIndex(null) }
-  function prev() { setLightboxIndex((i) => (i - 1 + items.length) % items.length) }
-  function next() { setLightboxIndex((i) => (i + 1) % items.length) }
+  function prev() { setLightboxIndex((i) => (i - 1 + filtered.length) % filtered.length) }
+  function next() { setLightboxIndex((i) => (i + 1) % filtered.length) }
 
   return (
     <section className="gallery-page">
@@ -40,7 +52,9 @@ export default function Gallery() {
 
       <div className="gallery-layout container">
         <div className="gallery-grid">
-          {items.map((item, idx) => (
+          <CategoryFilter categories={galleryCategories} active={activeCategory} onChange={handleCategoryChange} />
+
+          {filtered.map((item, idx) => (
             <AnimatedSection key={item.id} as="article" className="gallery-card" style={{ animationDelay: `${idx * 0.1}s` }}>
               <button
                 type="button"
@@ -50,6 +64,7 @@ export default function Gallery() {
               >
                 <div className="gallery-media">
                   <img src={item.image} alt={item.title} />
+                  <span className="gallery-card-tag">{item.category}</span>
                 </div>
                 <div className="gallery-body">
                   <h3>{item.title}</h3>
@@ -100,9 +115,15 @@ export default function Gallery() {
         </AnimatedSection>
       </div>
 
+      <AnimatedSection className="gallery-cta">
+        <h2>{t('gallery.ctaTitle')}</h2>
+        <p>{t('gallery.ctaDescription')}</p>
+        <CTAButton>{t('gallery.ctaLabel')}</CTAButton>
+      </AnimatedSection>
+
       {lightboxIndex !== null && (
         <GalleryLightbox
-          items={items}
+          items={filtered}
           currentIndex={lightboxIndex}
           onClose={closeLightbox}
           onPrev={prev}

@@ -1,0 +1,41 @@
+name: i18n key coverage
+
+on:
+  pull_request:
+    paths:
+      - 'src/locales/**'
+      - 'src/**/*.{js,jsx}'
+
+jobs:
+  check:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+      - run: npm ci
+      - run: npm run i18n:scan -- --fail-on-update
+      - name: Check key parity
+        run: |
+          node -e "
+          const en = require('./src/locales/en/translation.json');
+          const am = require('./src/locales/am/translation.json');
+          function keys(o, p='') {
+            return Object.entries(o).flatMap(([k,v]) =>
+              v && typeof v === 'object' ? keys(v, p+k+'.') : [p+k]
+            );
+          }
+          const enKeys = new Set(keys(en));
+          const amKeys = new Set(keys(am));
+          const missing = [...enKeys].filter(k => !amKeys.has(k));
+          const extra = [...amKeys].filter(k => !enKeys.has(k));
+          if (missing.length) {
+            console.log('Missing from am:', missing.join(', '));
+          }
+          if (extra.length) {
+            console.log('Extra in am (not in en):', extra.join(', '));
+          }
+          if (missing.length || extra.length) process.exit(1);
+          console.log('All keys match between en and am.');
+          "

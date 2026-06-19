@@ -1,6 +1,9 @@
+export const galleryCategories = ['Municipal', 'Industrial', 'Training']
+
 export const gallery = [
   {
     id: 'case1',
+    category: 'Municipal',
     title: 'Municipal WWTP Upgrade',
     year: 2023,
     location: 'Addis Ababa, Ethiopia',
@@ -10,6 +13,7 @@ export const gallery = [
   },
   {
     id: 'case2',
+    category: 'Industrial',
     title: 'Industrial Pretreatment Package',
     year: 2022,
     location: 'Dar es Salaam, Tanzania',
@@ -19,6 +23,7 @@ export const gallery = [
   },
   {
     id: 'case3',
+    category: 'Training',
     title: 'Operator Training & Commissioning',
     year: 2024,
     location: 'Nairobi, Kenya',

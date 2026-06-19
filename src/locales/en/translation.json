@@ -1,288 +1,280 @@
 {
-  "header": {
-    "brand": "Hub Wastewater Solutions",
-    "home": "Home",
-    "about": "About",
-    "services": "Services",
-    "team": "Team",
-    "caseStudies": "Case Studies",
-    "contact": "Contact",
-    "blog": "Blog",
-    "languageSwitch": "አማርኛ"
-  },
-  "footer": {
-    "tagline": "Wastewater treatment consulting, commissioning, and operations support.",
-    "designCredit": "Designed for fast deployment and clean operations.",
-    "copyright": "© 2024 Hub Wastewater Solutions. All rights reserved."
-  },
-  "home": {
-    "eyebrow": "Wastewater treatment made dependable",
-    "title": "Reliable operations for utility, industrial, and municipal systems.",
-    "description": "Hub Wastewater Solutions delivers treatment design support, commissioning, troubleshooting, and operator training backed by practical process experience.",
-    "cta": "Start a consultation",
-    "tagline": "Trusted by treatment leaders",
-    "taglineTitle": "Full-service wastewater expertise",
-    "taglineDescription": "Engineering, plant performance reviews, chemical dosing oversight, and operator guidance for long-term asset reliability.",
-    "featureEyebrow": "What we deliver",
-    "featureTitle": "Practical capabilities built for every plant.",
-    "featureDescription": "From front-end studies to compliance support, our team helps reduce downtime, improve water quality, and minimize lifecycle costs.",
-    "valueCards": [
-      {
-        "title": "Process clarity",
-        "description": "Actionable reports and technical recommendations that site teams can use immediately."
-      },
-      {
-        "title": "Fast response",
-        "description": "Rapid troubleshooting and commissioning assistance for high-stakes operations."
-      },
-      {
-        "title": "Regulatory confidence",
-        "description": "Practical compliance support for permit reviews, sampling, and reporting."
-      }
-    ]
-  },
   "about": {
-    "eyebrow": "About Hub Wastewater Solutions",
-    "title": "Engineering wastewater systems with resilience in mind.",
     "description": "Our team brings decades of operational experience from industrial, municipal, and advanced treatment facilities. We specialize in pragmatic recommendations, reliable commissioning, and operator training.",
+    "eyebrow": "About Hub Wastewater Solutions",
     "panels": [
       {
-        "title": "Our mission",
-        "content": "Help water and wastewater organizations improve performance with clear process insight, actionable service plans, and hands-on site support."
+        "content": "Help water and wastewater organizations improve performance with clear process insight, actionable service plans, and hands-on site support.",
+        "title": "Our mission"
       },
       {
-        "title": "Core expertise",
         "items": [
           "Biological and chemical treatment optimization",
           "Test & commissioning for new equipment and upgrades",
           "Process troubleshooting and startup support",
           "Operations training and plant transfer guidance"
-        ]
+        ],
+        "title": "Core expertise"
       },
       {
-        "title": "Certifications",
         "items": [
           "ISO 9001-inspired quality management practices",
           "OSHA-compliant field safety procedures",
           "State-approved wastewater operator training curricula"
-        ]
+        ],
+        "title": "Certifications"
       }
-    ]
+    ],
+    "title": "Engineering wastewater systems with resilience in mind."
   },
-  "services": {
-    "eyebrow": "Our Services",
-    "title": "Solutions for safer, more efficient wastewater operations.",
-    "description": "We build service plans around each site's equipment, permits, and operational goals so teams can meet compliance without sacrificing reliability.",
+  "blog": {
+    "back": "Back to blog",
+    "description": "Practical stories on process reliability, compliance, and plant performance.",
+    "eyebrow": "Blog",
     "items": [
       {
-        "title": "Process optimization",
-        "description": "Improve treatment efficiency with data-driven performance assessments and tuning recommendations."
+        "summary": "A structured process for prioritizing performance improvements, from sampling to operator training.",
+        "title": "5 steps to reduce plant downtime"
       },
       {
-        "title": "Test & commissioning",
-        "description": "Validate equipment, controls, and chemical dosing during startup and upgrades for smooth handover."
+        "summary": "A field-tested checklist for identifying air system, control, and biological risks quickly.",
+        "title": "Troubleshooting an aeration failure"
       },
       {
-        "title": "Troubleshooting",
-        "description": "Rapid field diagnostics for biological, aeration, and permit compliance issues."
-      },
-      {
-        "title": "Training & mentoring",
-        "description": "Hands-on operator training and process mentoring to build in-house confidence and safety."
-      },
-      {
-        "title": "Compliance reviews",
-        "description": "Permit-readiness checks, sampling strategies, and reporting support for regulatory reliability."
-      },
-      {
-        "title": "Startup support",
-        "description": "On-site commissioning support for structural modifications, chemical systems, and final acceptance."
+        "summary": "How to validate feed strategy, sampling plans, and PLC integration on new treatment systems.",
+        "title": "Commissioning upgraded chemical dosing"
       }
-    ]
-  },
-  "process": {
-    "title": "How we help at every stage",
-    "subtitle": "Click a stage to learn how our services support your treatment process from start to finish.",
-    "hint": "Click a treatment stage above to see how we can help.",
-    "stages": {
-      "influent": {
-        "label": "Influent & Screening",
-        "description": "Raw wastewater enters the plant through collection systems and passes through bar screens to remove large debris.",
-        "details": "We help optimize screening operations, assess influent loading variability, and design monitoring plans to protect downstream processes. Our compliance reviews ensure your screening and sampling meets regulatory requirements."
-      },
-      "primary": {
-        "label": "Primary Treatment",
-        "description": "Wastewater flows into sedimentation basins where solids settle and scum is skimmed from the surface.",
-        "details": "Our startup support and commissioning services validate primary clarifier mechanics, sludge collection, and flow distribution. We troubleshoot settling issues and tune chemical dosing for better solids removal."
-      },
-      "biological": {
-        "label": "Biological Treatment",
-        "description": "Microorganisms break down organic matter in aerated basins using activated sludge, MBBR, SBR, or similar processes.",
-        "details": "This is the heart of the plant, and our core strength. We optimize aeration, nutrient dosing, and biomass health. Our team troubleshoots bulking, foaming, and nitrification upsets, and provides hands-on operator training for biological process control."
-      },
-      "secondary": {
-        "label": "Secondary Clarification",
-        "description": "Mixed liquor flows to final clarifiers where treated solids settle, producing clear effluent and return activated sludge.",
-        "details": "We assess clarifier hydraulics, solids loading, and sludge settling characteristics. Our commissioning support ensures weir leveling, skimmer operation, and RAS flow control are dialed in for peak performance."
-      },
-      "tertiary": {
-        "label": "Tertiary & Disinfection",
-        "description": "Polishing steps such as filtration, UV disinfection, or chemical dosing remove remaining contaminants before discharge.",
-        "details": "Our team validates disinfection system performance, optimizes chemical dosing, and verifies effluent quality through rigorous testing. We provide troubleshooting for filtration breakthrough and disinfection byproduct issues."
-      },
-      "effluent": {
-        "label": "Effluent & Sludge Handling",
-        "description": "Treated water is discharged or reused, while sludge is digested, dewatered, and hauled away for beneficial use or disposal.",
-        "details": "We support compliance reporting and effluent monitoring programs. Our process optimization work extends to sludge handling — from digester health to polymer dosing optimization — reducing hauling costs and improving biosolids quality."
-      }
-    }
-  },
-  "team": {
-    "eyebrow": "Our Team",
-    "title": "Experienced Process and Electromechanical engineers.",
-    "description": "A collaborative team of treatment specialists, field engineers, and training professionals committed to helping your plant perform.",
-    "contactCta": "Get in touch",
-    "members": [
-      {
-        "name": "Sened Tariku",
-        "role": "Senior Process Engineer",
-        "bio": "Develops treatment strategies for aeration, nutrient removal, and chemical dosing performance.",
-        "skills": ["Process design", "Startup", "Test and Commissioning", "Troubleshooting", "Personnel Training"]
-      },
-      {
-        "name": "Getu Gashaw",
-        "role": "Senior Mechanical and Process Engineer",
-        "bio": "Coordinates field troubleshooting, operator training, and site acceptance activities.",
-        "skills": ["Electromechanical Installation", "Troubleshooting and Maintenance", "Operator Coaching"]
-      },
-      {
-        "name": "Kirubel Abiyu",
-        "role": "Electrical Engineer",
-        "bio": "Electrical Installations, reporting plans, and equipment commissioning documentation.",
-        "skills": ["Permitting", "Reporting", "Quality control"]
-      },
-      {
-        "name": "Jordan Price",
-        "role": "Controls & Commissioning Engineer",
-        "bio": "Integrates PLC systems, dosing controls, and performance test protocols.",
-        "skills": ["Controls", "Dosing", "Startup support"]
-      },
-      {
-        "name": "Solomon Kore",
-        "role": "Civil Engineer",
-        "bio": "Project management, communication, and coordination.",
-        "skills": ["Management", "Communication", "Coordination"]
-      }
-    ]
+    ],
+    "title": "Insight for teams operating modern treatment facilities."
   },
   "contact": {
-    "eyebrow": "Contact",
-    "title": "Send a project brief or request an operations review.",
+    "city": "Addis Ababa",
+    "copied": "Copied!",
+    "country": "Ethiopia",
     "description": "Use the form below to request a proposal, schedule a consultation, or ask about a plant survey.",
-    "whatsappTitle": "WhatsApp",
-    "whatsapp": "Chat with us on WhatsApp for quick responses",
-    "telegramTitle": "Telegram",
-    "telegram": "Reach us on Telegram for instant messaging",
     "emailTitle": "Email",
-    "phoneTitle": "Phone",
-    "formName": "Name",
-    "formEmail": "Email",
+    "eyebrow": "Contact",
     "formCompany": "Company",
+    "formEmail": "Email",
+    "formError": "Unable to send message. Please try again later.",
+    "formErrorEmail": "Enter a valid email",
+    "formErrorRequired": "Required",
     "formMessage": "Message",
+    "formName": "Name",
     "formSend": "Send message",
     "formSending": "Sending...",
-    "formErrorRequired": "Required",
-    "formErrorEmail": "Enter a valid email",
     "formSuccess": "Message received — we will reply shortly.",
-    "formError": "Unable to send message. Please try again later.",
     "office": "Office",
     "officeHours": "Office hours",
     "officeHoursValue": "Mon–Fri, 8:00 AM – 5:00 PM PT",
-    "city": "Addis Ababa",
-    "country": "Ethiopia",
-    "copied": "Copied!"
+    "phoneTitle": "Phone",
+    "telegram": "Reach us on Telegram for instant messaging",
+    "telegramTitle": "Telegram",
+    "title": "Send a project brief or request an operations review.",
+    "whatsapp": "Chat with us on WhatsApp for quick responses",
+    "whatsappTitle": "WhatsApp"
   },
-  "testimonials": {
-    "eyebrow": "Testimonials",
-    "title": "Client feedback from operating teams and engineering partners.",
-    "description": "These case highlights describe the impact of rapid troubleshooting, commissioning support, and process optimization work.",
-    "items": [
-      {
-        "quote": "Hub Wastewater Solutions helped us identify permit risks quickly and guided our operators through a successful startup after a major upgrade.",
-        "name": "Avery Reynolds",
-        "role": "Plant Manager, Cascade Utility"
-      },
-      {
-        "quote": "Their team arrives ready to solve problems and translate technical findings into practical action plans.",
-        "name": "Kendra Smith",
-        "role": "Water Treatment Director, Northshore Energy"
-      },
-      {
-        "quote": "The commissioning scope was on time, well documented, and made our handover much smoother than expected.",
-        "name": "Evan Brooks",
-        "role": "Senior Project Engineer, Meridian Systems"
-      }
-    ]
-  },
-  "blog": {
-    "eyebrow": "Blog",
-    "title": "Insight for teams operating modern treatment facilities.",
-    "description": "Practical stories on process reliability, compliance, and plant performance.",
-    "back": "Back to blog",
-    "items": [
-      {
-        "title": "5 steps to reduce plant downtime",
-        "summary": "A structured process for prioritizing performance improvements, from sampling to operator training."
-      },
-      {
-        "title": "Troubleshooting an aeration failure",
-        "summary": "A field-tested checklist for identifying air system, control, and biological risks quickly."
-      },
-      {
-        "title": "Commissioning upgraded chemical dosing",
-        "summary": "How to validate feed strategy, sampling plans, and PLC integration on new treatment systems."
-      }
-    ]
+  "footer": {
+    "designCredit": "Designed for fast deployment and clean operations.",
+    "tagline": "Wastewater treatment consulting, commissioning, and operations support."
   },
   "gallery": {
-    "eyebrow": "Case Studies",
-    "title": "Project highlights in wastewater treatment",
+    "brochureDesc": "Overview of our services, process strengths, and engagement approach.",
+    "brochureName": "Brochure pack",
+    "ctaDescription": "Contact our team for a consultation or site assessment.",
+    "ctaLabel": "Get in touch",
+    "ctaTitle": "Ready to discuss your project?",
     "description": "A selection of recent projects showcasing process upgrades, industrial pretreatment, and commissioning & training work.",
+    "download": "Download",
+    "downloadsDescription": "Download our brochure, wastewater facts, and a curated set of non-proprietary treatment documents to support planning, training, and project review.",
+    "downloadsEyebrow": "Downloads",
+    "downloadsTitle": "Helpful resources for wastewater teams",
+    "eyebrow": "Case Studies",
     "items": [
       {
         "id": "case1",
-        "title": "Municipal WWTP Upgrade",
         "location": "Addis Ababa, Ethiopia",
-        "summary": "Upgraded aeration, secondary clarification, and chemical dosing systems to improve BOD and nutrient removal for a 10 MLD plant."
+        "summary": "Upgraded aeration, secondary clarification, and chemical dosing systems to improve BOD and nutrient removal for a 10 MLD plant.",
+        "title": "Municipal WWTP Upgrade"
       },
       {
         "id": "case2",
-        "title": "Industrial Pretreatment Package",
         "location": "Dar es Salaam, Tanzania",
-        "summary": "Delivered a compact pretreatment and equalization solution for a food processing facility, reducing TSS and fat/oil loads before discharge."
+        "summary": "Delivered a compact pretreatment and equalization solution for a food processing facility, reducing TSS and fat/oil loads before discharge.",
+        "title": "Industrial Pretreatment Package"
       },
       {
         "id": "case3",
-        "title": "Operator Training & Commissioning",
         "location": "Nairobi, Kenya",
-        "summary": "Provided on-site operator training, startup support, and instrumentation tuning to achieve stable nitrification within startup window."
+        "summary": "Provided on-site operator training, startup support, and instrumentation tuning to achieve stable nitrification within startup window.",
+        "title": "Operator Training & Commissioning"
       }
     ],
-    "downloadsEyebrow": "Downloads",
-    "downloadsTitle": "Helpful resources for wastewater teams",
-    "downloadsDescription": "Download our brochure, wastewater facts, and a curated set of non-proprietary treatment documents to support planning, training, and project review.",
-    "brochureName": "Brochure pack",
-    "brochureDesc": "Overview of our services, process strengths, and engagement approach.",
-    "wastewaterFactsName": "Wastewater facts",
-    "wastewaterFactsDesc": "Key treatment metrics and process benchmarks for utilities and industry.",
-    "nonPropName": "Non-proprietary documents",
     "nonPropDesc": "Open-source treatment resources and guidance for operational improvement.",
-    "download": "Download"
+    "nonPropName": "Non-proprietary documents",
+    "title": "Project highlights in wastewater treatment",
+    "wastewaterFactsDesc": "Key treatment metrics and process benchmarks for utilities and industry.",
+    "wastewaterFactsName": "Wastewater facts"
+  },
+  "header": {
+    "about": "About",
+    "blog": "Blog",
+    "caseStudies": "Case Studies",
+    "contact": "Contact",
+    "home": "Home",
+    "languageSwitch": "አማርኛ",
+    "services": "Services",
+    "team": "Team"
+  },
+  "home": {
+    "cta": "Start a consultation",
+    "description": "Hub Wastewater Solutions delivers treatment design support, commissioning, troubleshooting, and operator training backed by practical process experience.",
+    "eyebrow": "Wastewater treatment made dependable",
+    "featureDescription": "From front-end studies to compliance support, our team helps reduce downtime, improve water quality, and minimize lifecycle costs.",
+    "featureEyebrow": "What we deliver",
+    "featureTitle": "Practical capabilities built for every plant.",
+    "tagline": "Trusted by treatment leaders",
+    "taglineDescription": "Engineering, plant performance reviews, chemical dosing oversight, and operator guidance for long-term asset reliability.",
+    "taglineTitle": "Full-service wastewater expertise",
+    "title": "Reliable operations for utility, industrial, and municipal systems.",
+    "valueCards": [
+      {
+        "description": "Actionable reports and technical recommendations that site teams can use immediately.",
+        "title": "Process clarity"
+      },
+      {
+        "description": "Rapid troubleshooting and commissioning assistance for high-stakes operations.",
+        "title": "Fast response"
+      },
+      {
+        "description": "Practical compliance support for permit reviews, sampling, and reporting.",
+        "title": "Regulatory confidence"
+      }
+    ]
   },
   "notFound": {
-    "eyebrow": "404",
-    "title": "Page not found",
+    "cta": "Return home",
     "description": "The page you are looking for doesn't exist yet.",
-    "cta": "Return home"
+    "eyebrow": "404",
+    "title": "Page not found"
+  },
+  "process": {
+    "hint": "Click a treatment stage above to see how we can help.",
+    "stages": "",
+    "subtitle": "Click a stage to learn how our services support your treatment process from start to finish.",
+    "title": "How we help at every stage"
+  },
+  "services": {
+    "description": "We build service plans around each site's equipment, permits, and operational goals so teams can meet compliance without sacrificing reliability.",
+    "eyebrow": "Our Services",
+    "items": [
+      {
+        "description": "Improve treatment efficiency with data-driven performance assessments and tuning recommendations.",
+        "title": "Process optimization"
+      },
+      {
+        "description": "Validate equipment, controls, and chemical dosing during startup and upgrades for smooth handover.",
+        "title": "Test & commissioning"
+      },
+      {
+        "description": "Rapid field diagnostics for biological, aeration, and permit compliance issues.",
+        "title": "Troubleshooting"
+      },
+      {
+        "description": "Hands-on operator training and process mentoring to build in-house confidence and safety.",
+        "title": "Training & mentoring"
+      },
+      {
+        "description": "Permit-readiness checks, sampling strategies, and reporting support for regulatory reliability.",
+        "title": "Compliance reviews"
+      },
+      {
+        "description": "On-site commissioning support for structural modifications, chemical systems, and final acceptance.",
+        "title": "Startup support"
+      }
+    ],
+    "title": "Solutions for safer, more efficient wastewater operations."
+  },
+  "team": {
+    "contactCta": "Get in touch",
+    "description": "A collaborative team of treatment specialists, field engineers, and training professionals committed to helping your plant perform.",
+    "eyebrow": "Our Team",
+    "members": [
+      {
+        "bio": "Develops treatment strategies for aeration, nutrient removal, and chemical dosing performance.",
+        "name": "Sened Tariku",
+        "role": "Senior Process Engineer",
+        "skills": [
+          "Process design",
+          "Startup",
+          "Test and Commissioning",
+          "Troubleshooting",
+          "Personnel Training"
+        ]
+      },
+      {
+        "bio": "Coordinates field troubleshooting, operator training, and site acceptance activities.",
+        "name": "Getu Gashaw",
+        "role": "Senior Mechanical and Process Engineer",
+        "skills": [
+          "Electromechanical Installation",
+          "Troubleshooting and Maintenance",
+          "Operator Coaching"
+        ]
+      },
+      {
+        "bio": "Electrical Installations, reporting plans, and equipment commissioning documentation.",
+        "name": "Kirubel Abiyu",
+        "role": "Electrical Engineer",
+        "skills": [
+          "Permitting",
+          "Reporting",
+          "Quality control"
+        ]
+      },
+      {
+        "bio": "Integrates PLC systems, dosing controls, and performance test protocols.",
+        "name": "Jordan Price",
+        "role": "Controls & Commissioning Engineer",
+        "skills": [
+          "Controls",
+          "Dosing",
+          "Startup support"
+        ]
+      },
+      {
+        "bio": "Project management, communication, and coordination.",
+        "name": "Solomon Kore",
+        "role": "Civil Engineer",
+        "skills": [
+          "Management",
+          "Communication",
+          "Coordination"
+        ]
+      }
+    ],
+    "title": "Experienced Process and Electromechanical engineers."
+  },
+  "testimonials": {
+    "description": "These case highlights describe the impact of rapid troubleshooting, commissioning support, and process optimization work.",
+    "eyebrow": "Testimonials",
+    "items": [
+      {
+        "name": "Avery Reynolds",
+        "quote": "Hub Wastewater Solutions helped us identify permit risks quickly and guided our operators through a successful startup after a major upgrade.",
+        "role": "Plant Manager, Cascade Utility"
+      },
+      {
+        "name": "Kendra Smith",
+        "quote": "Their team arrives ready to solve problems and translate technical findings into practical action plans.",
+        "role": "Water Treatment Director, Northshore Energy"
+      },
+      {
+        "name": "Evan Brooks",
+        "quote": "The commissioning scope was on time, well documented, and made our handover much smoother than expected.",
+        "role": "Senior Project Engineer, Meridian Systems"
+      }
+    ],
+    "title": "Client feedback from operating teams and engineering partners."
   }
 }

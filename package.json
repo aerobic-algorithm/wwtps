@@ -9,7 +9,9 @@
     "lint": "eslint .",
     "preview": "vite preview",
     "predeploy": "npm run build",
-    "deploy": "gh-pages -d dist"
+    "deploy": "gh-pages -d dist",
+    "i18n:scan": "i18next",
+    "i18n:translate": "node scripts/translate-amharic.js"
   },
   "dependencies": {
     "i18next": "^26.3.1",
@@ -33,6 +35,7 @@
     "eslint-plugin-react-refresh": "^0.5.2",
     "gh-pages": "^5.0.0",
     "globals": "^17.6.0",
+    "i18next-parser": "^9.0.2",
     "vite": "^8.0.12"
   }
 }
