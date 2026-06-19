@@ -50,7 +50,9 @@ export default function Gallery() {
 
       <ProjectTimeline items={items} />
 
-      <CategoryFilter categories={galleryCategories} active={activeCategory} onChange={handleCategoryChange} />
+      <div className="container">
+        <CategoryFilter categories={galleryCategories} active={activeCategory} onChange={handleCategoryChange} />
+      </div>
 
       <div className="gallery-layout container">
         <div className="gallery-grid">

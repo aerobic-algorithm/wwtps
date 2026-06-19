@@ -116,6 +116,7 @@ button {
   }
 
   /* Reduce page padding on small screens to bring content closer to the header */
+  .gallery-page,
   .home-page,
   .company-page,
   .services-page,
