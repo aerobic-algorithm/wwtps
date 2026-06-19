@@ -50,10 +50,10 @@ export default function Gallery() {
 
       <ProjectTimeline items={items} />
 
+      <CategoryFilter categories={galleryCategories} active={activeCategory} onChange={handleCategoryChange} />
+
       <div className="gallery-layout container">
         <div className="gallery-grid">
-          <CategoryFilter categories={galleryCategories} active={activeCategory} onChange={handleCategoryChange} />
-
           {filtered.map((item, idx) => (
             <AnimatedSection key={item.id} as="article" className="gallery-card" style={{ animationDelay: `${idx * 0.1}s` }}>
               <button
