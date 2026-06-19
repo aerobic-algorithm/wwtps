@@ -328,7 +328,8 @@ button {
 .contact-page,
 .testimonials-page,
 .blog-page,
-.notfound-page {
+.notfound-page,
+.gallery-page {
   padding: 56px 0 88px;
 }
 
