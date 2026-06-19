@@ -1,4 +1,4 @@
-import { Link, NavLink } from 'react-router-dom'
+import { Link, NavLink, useLocation } from 'react-router-dom'
 import { useEffect, useRef, useState } from 'react'
 import { useTranslation } from 'react-i18next'
 import { HiOutlineMagnifyingGlass } from 'react-icons/hi2'
@@ -11,6 +11,19 @@ export default function Header() {
   const navRef = useRef(null)
   const toggleRef = useRef(null)
   const { t, i18n } = useTranslation()
+  const location = useLocation()
+
+  const pageLabelMap = {
+    '/': t('header.home'),
+    '/about': t('header.about'),
+    '/services': t('header.services'),
+    '/team': t('header.team'),
+    '/gallery': t('header.caseStudies'),
+    '/contact': t('header.contact'),
+    '/blog': t('header.blog'),
+  }
+  const pageLabel = pageLabelMap[location.pathname] ||
+    (location.pathname.startsWith('/blog/') ? t('header.blog') : '')
 
   useEffect(() => {
     if (!isMenuOpen) return
@@ -48,6 +61,7 @@ export default function Header() {
         <Link className="brand" to="/">
           Hub Wastewater Solutions
         </Link>
+        {pageLabel && <span className="mobile-page-label">{pageLabel}</span>}
         <div className="header-controls">
           <button
             ref={toggleRef}

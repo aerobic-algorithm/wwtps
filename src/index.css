@@ -156,34 +156,59 @@ button {
   position: relative;
   color: var(--text-muted);
   font-weight: 500;
-  padding: 4px 0;
-  transition: color 0.2s ease;
+  padding: 4px 14px;
+  border-radius: 999px;
+  transition: background 0.2s ease, color 0.2s ease;
 }
 
 .nav-link::after {
   content: '';
   position: absolute;
   bottom: -2px;
-  left: 0;
+  left: 50%;
   width: 0;
   height: 2px;
   background: var(--accent);
   border-radius: 1px;
+  transform: translateX(-50%);
   transition: width 0.25s ease;
 }
 
-.nav-link:hover,
-.nav-link.active {
+.nav-link:hover {
   color: var(--primary);
 }
 
-.nav-link:hover::after,
+.nav-link:hover::after {
+  width: 50%;
+}
+
+.nav-link.active {
+  background: var(--primary-soft);
+  color: var(--primary);
+  font-weight: 600;
+}
+
 .nav-link.active::after {
-  width: 100%;
+  display: none;
 }
 
 .nav-link:active {
   transform: scale(0.96);
+}
+
+/* Mobile page label */
+.mobile-page-label {
+  display: none;
+  font-size: 0.88rem;
+  font-weight: 600;
+  color: var(--primary);
+  padding: 4px 0 6px;
+}
+
+@media (max-width: 900px) {
+  .mobile-page-label {
+    display: block;
+  }
 }
 
 /* Menu Toggle Button */
