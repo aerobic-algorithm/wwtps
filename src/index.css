@@ -199,15 +199,20 @@ button {
 /* Mobile page label */
 .mobile-page-label {
   display: none;
-  font-size: 0.88rem;
+  flex: 1;
+  font-size: 0.9rem;
   font-weight: 600;
-  color: var(--primary);
-  padding: 4px 0 6px;
+  color: var(--text);
+  padding-left: 8px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
 }
 
 @media (max-width: 900px) {
   .mobile-page-label {
-    display: block;
+    display: inline-flex;
+    align-items: center;
   }
 }
 

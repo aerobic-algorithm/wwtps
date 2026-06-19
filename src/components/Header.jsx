@@ -61,7 +61,6 @@ export default function Header() {
         <Link className="brand" to="/">
           Hub Wastewater Solutions
         </Link>
-        {pageLabel && <span className="mobile-page-label">{pageLabel}</span>}
         <div className="header-controls">
           <button
             ref={toggleRef}
@@ -74,6 +73,7 @@ export default function Header() {
             <span></span>
             <span></span>
           </button>
+          {pageLabel && <span className="mobile-page-label">{pageLabel}</span>}
           <button
             className="header-icon-btn"
             onClick={() => setSearchOpen(true)}
