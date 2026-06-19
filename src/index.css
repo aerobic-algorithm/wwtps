@@ -1575,13 +1575,13 @@ button {
   }
 
   .nav-link {
-    padding: 8px 0;
+    padding: 8px 14px;
     border-bottom: 1px solid transparent;
     transition: all 0.25s ease;
   }
 
   .nav-link:hover {
-    padding-left: 8px;
+    padding-left: 22px;
     border-bottom-color: var(--primary);
   }
 
