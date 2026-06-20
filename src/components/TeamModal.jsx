@@ -49,23 +49,25 @@ export default function TeamModal({ member, onClose }) {
           </div>
         )}
 
-        {member.linkedin && (
-          <a
-            href={member.linkedin}
-            target="_blank"
-            rel="noopener noreferrer"
-            className="modal-linkedin"
-            aria-label={`${member.name} on LinkedIn`}
-          >
-            <FaLinkedin size={18} />
-            LinkedIn
-          </a>
-        )}
+        <div className="modal-actions">
+          {member.linkedin && (
+            <a
+              href={member.linkedin}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="modal-linkedin"
+              aria-label={`${member.name} on LinkedIn`}
+            >
+              <FaLinkedin size={18} />
+              LinkedIn
+            </a>
+          )}
 
-        <Link to="/contact" className="modal-contact-btn" onClick={onClose}>
-          <HiOutlineEnvelope size={18} />
-          {t('team.contactCta')}
-        </Link>
+          <Link to="/contact" className="modal-contact-btn" onClick={onClose}>
+            <HiOutlineEnvelope size={18} />
+            {t('team.contactCta')}
+          </Link>
+        </div>
       </div>
     </div>
   )

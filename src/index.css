@@ -2480,6 +2480,15 @@ button {
   transform: translateY(-2px);
 }
 
+/* Modal actions container */
+.modal-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+  justify-content: center;
+  margin-top: 24px;
+}
+
 /* Modal LinkedIn */
 .modal-linkedin {
   display: inline-flex;
