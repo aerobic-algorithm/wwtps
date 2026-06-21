@@ -6,7 +6,8 @@ import GalleryLightbox from '../components/GalleryLightbox'
 import ProjectTimeline from '../components/ProjectTimeline'
 import CategoryFilter from '../components/CategoryFilter'
 import CTAButton from '../components/CTAButton'
-import { gallery, galleryCategories } from '../data/gallery'
+import galleryData from '../data/gallery.json'
+const { items: gallery, categories: galleryCategories } = galleryData
 
 export default function Gallery() {
   const { t } = useTranslation()

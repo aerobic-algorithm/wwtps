@@ -7,7 +7,7 @@ import CategoryFilter from '../components/CategoryFilter'
 import Accordion from '../components/Accordion'
 import ProcessDiagram from '../components/ProcessDiagram'
 import { services, serviceCategories } from '../data/services'
-import { faq } from '../data/faq'
+import faq from '../data/faq.json'
 
 export default function Services() {
   const { t } = useTranslation()

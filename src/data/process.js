@@ -1,35 +1,7 @@
-import {
-  HiOutlineArrowDownCircle,
-  HiOutlineRectangleGroup,
-  HiOutlineCircleStack,
-  HiOutlineBars3BottomLeft,
-  HiOutlineBeaker,
-  HiOutlineArrowUpCircle,
-} from 'react-icons/hi2'
+import raw from '../data/process.json'
+import { iconMap } from './iconMap'
 
-export const treatmentStages = [
-  {
-    id: 'influent',
-    icon: HiOutlineArrowDownCircle,
-  },
-  {
-    id: 'primary',
-    icon: HiOutlineRectangleGroup,
-  },
-  {
-    id: 'biological',
-    icon: HiOutlineCircleStack,
-  },
-  {
-    id: 'secondary',
-    icon: HiOutlineBars3BottomLeft,
-  },
-  {
-    id: 'tertiary',
-    icon: HiOutlineBeaker,
-  },
-  {
-    id: 'effluent',
-    icon: HiOutlineArrowUpCircle,
-  },
-]
+export const treatmentStages = raw.map((stage) => ({
+  ...stage,
+  icon: iconMap[stage.icon],
+}))

@@ -2,8 +2,9 @@ import { useState, useEffect, useRef, useCallback } from 'react'
 import { Link } from 'react-router-dom'
 import { HiOutlineXMark, HiOutlineMagnifyingGlass } from 'react-icons/hi2'
 import { services } from '../data/services'
-import { team } from '../data/team'
-import { gallery } from '../data/gallery'
+import team from '../data/team.json'
+import galleryData from '../data/gallery.json'
+const gallery = galleryData.items
 import { posts } from '../data/posts'
 
 const pages = [

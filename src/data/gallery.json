@@ -1,0 +1,32 @@
+{
+  "categories": ["Municipal", "Industrial", "Training"],
+  "items": [
+    {
+      "id": "case1",
+      "category": "Municipal",
+      "title": "Municipal WWTP Upgrade",
+      "year": 2023,
+      "location": "Addis Ababa, Ethiopia",
+      "summary": "Upgraded aeration, secondary clarification, and chemical dosing systems to improve BOD and nutrient removal for a 10 MLD plant.",
+      "image": "images/case-municipal.svg"
+    },
+    {
+      "id": "case2",
+      "category": "Industrial",
+      "title": "Industrial Pretreatment Package",
+      "year": 2022,
+      "location": "Dar es Salaam, Tanzania",
+      "summary": "Delivered a compact pretreatment and equalization solution for a food processing facility, reducing TSS and fat/oil loads before discharge.",
+      "image": "images/case-industrial.svg"
+    },
+    {
+      "id": "case3",
+      "category": "Training",
+      "title": "Operator Training & Commissioning",
+      "year": 2024,
+      "location": "Nairobi, Kenya",
+      "summary": "Provided on-site operator training, startup support, and instrumentation tuning to achieve stable nitrification within startup window.",
+      "image": "images/case-training.svg"
+    }
+  ]
+}

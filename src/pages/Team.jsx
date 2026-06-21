@@ -4,7 +4,7 @@ import Seo from '../components/Seo'
 import TeamCard from '../components/TeamCard'
 import TeamModal from '../components/TeamModal'
 import AnimatedSection from '../components/AnimatedSection'
-import { team } from '../data/team'
+import team from '../data/team.json'
 
 export default function Team() {
   const { t } = useTranslation()
