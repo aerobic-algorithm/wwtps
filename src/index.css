@@ -58,6 +58,7 @@ body {
   background: radial-gradient(circle at top, rgba(8, 145, 178, 0.08), transparent 36%),
     linear-gradient(180deg, #f5fbff 0%, #eef7fc 48%, #f8fafc 100%);
   color: var(--text);
+  transition: background 0.35s ease, color 0.35s ease;
 }
 
 [data-theme="dark"] body {
@@ -173,21 +174,20 @@ button {
   content: '';
   position: absolute;
   bottom: -2px;
-  left: 50%;
+  left: 0;
   width: 0;
   height: 2px;
   background: var(--accent);
   border-radius: 1px;
-  transform: translateX(-50%);
   transition: width 0.25s ease;
+}
+
+.nav-link:hover::after {
+  width: 100%;
 }
 
 .nav-link:hover {
   color: var(--primary);
-}
-
-.nav-link:hover::after {
-  width: 50%;
 }
 
 .nav-link.active {
@@ -403,17 +403,33 @@ button {
 }
 
 .hero-panel {
+  position: relative;
   display: grid;
   grid-template-columns: 1.7fr 1fr;
   gap: 32px;
   align-items: center;
   padding: 72px 0 44px;
+  background: radial-gradient(ellipse at 30% 40%, rgba(11, 79, 102, 0.04) 0%, transparent 50%),
+              radial-gradient(ellipse at 70% 60%, rgba(5, 110, 133, 0.03) 0%, transparent 50%);
+  background-size: 200% 200%;
+  animation: heroBgShift 12s ease-in-out infinite;
+}
+
+@keyframes heroBgShift {
+  0%, 100% { background-position: 0% 0%; }
+  50% { background-position: 100% 100%; }
 }
 
 .hero-copy h1 {
   margin: 0;
   font-size: clamp(3rem, 4vw, 4.6rem);
   line-height: 0.98;
+}
+
+.hero-copy,
+.hero-panel__card {
+  position: relative;
+  z-index: 2;
 }
 
 .hero-copy .hero-text {
@@ -513,12 +529,13 @@ button {
   padding: 32px;
   min-height: 240px;
   box-shadow: var(--shadow);
-  transition: transform 0.3s ease, border-color 0.3s ease;
+  transition: transform 0.3s ease, border-color 0.3s ease, box-shadow 0.3s ease;
 }
 
 .service-card:hover {
   transform: translateY(-6px);
-  border-color: var(--accent-soft);
+  border-color: var(--accent);
+  box-shadow: 0 24px 48px rgba(11, 79, 102, 0.12);
 }
 
 .service-icon {
@@ -1458,12 +1475,31 @@ button {
   background: var(--accent);
   color: var(--bg-surface);
   font-weight: 700;
+  position: relative;
+  overflow: hidden;
   transition: transform 0.25s ease, box-shadow 0.25s ease;
 }
 
+.cta-button::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(circle at center, rgba(255, 255, 255, 0.25), transparent 60%);
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
 .cta-button:hover {
-  transform: translateY(-1px);
-  box-shadow: var(--shadow);
+  transform: translateY(-2px);
+  box-shadow: 0 12px 28px rgba(5, 110, 133, 0.3);
+}
+
+.cta-button:hover::before {
+  opacity: 1;
+}
+
+.cta-button:active {
+  transform: scale(0.96);
 }
 
 /* Back to Top Button */
@@ -2595,5 +2631,192 @@ button {
   .team-grid {
     grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
     gap: 28px;
+  }
+}
+
+/* ===== Page transition ===== */
+.page-transition {
+  animation: fadeInUp 0.35s ease;
+}
+
+/* ===== Floating shapes (hero background) ===== */
+@keyframes float {
+  0%, 100% { transform: translateY(0) rotate(0deg); }
+  33% { transform: translateY(-16px) rotate(3deg); }
+  66% { transform: translateY(-8px) rotate(-2deg); }
+}
+
+.floating-shapes {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  overflow: hidden;
+  z-index: 1;
+}
+
+.shape {
+  position: absolute;
+  border-radius: 50%;
+  opacity: 0.06;
+}
+
+.shape-1 {
+  width: 320px;
+  height: 320px;
+  background: var(--accent);
+  top: -80px;
+  right: -80px;
+  animation: float 14s ease-in-out infinite;
+}
+
+.shape-2 {
+  width: 200px;
+  height: 200px;
+  background: var(--primary);
+  bottom: -40px;
+  left: -60px;
+  animation: float 18s ease-in-out infinite reverse;
+}
+
+.shape-3 {
+  width: 120px;
+  height: 120px;
+  background: var(--accent);
+  top: 40%;
+  left: 55%;
+  animation: float 12s ease-in-out infinite 3s;
+}
+
+/* ===== Staggered heading ===== */
+.staggered-heading span {
+  display: inline-block;
+  opacity: 0;
+  animation: fadeInUp 0.5s ease forwards;
+}
+
+/* ===== Stats row ===== */
+.stats-row {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 24px;
+  margin-top: 64px;
+  padding: 40px 0;
+  border-top: 1px solid var(--border);
+}
+
+.stat-counter {
+  text-align: center;
+}
+
+.stat-number {
+  display: block;
+  font-size: 2.6rem;
+  font-weight: 800;
+  color: var(--primary);
+  line-height: 1;
+  letter-spacing: -0.03em;
+}
+
+.stat-label {
+  display: block;
+  margin-top: 8px;
+  font-size: 0.95rem;
+  color: var(--text-muted);
+  font-weight: 500;
+}
+
+@media (max-width: 640px) {
+  .stats-row {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 32px 16px;
+  }
+
+  .stat-number {
+    font-size: 2rem;
+  }
+}
+
+/* ===== Form success checkmark ===== */
+.form-success {
+  text-align: center;
+  padding: 48px 20px;
+  background: var(--bg-surface);
+  border: 1px solid var(--border);
+  border-radius: 30px;
+  box-shadow: var(--shadow);
+}
+
+.form-success h3 {
+  margin: 0 0 12px;
+  font-size: 1.5rem;
+  color: var(--success);
+}
+
+.form-success p {
+  margin: 0;
+  color: var(--text-muted);
+  line-height: 1.7;
+}
+
+.checkmark {
+  width: 80px;
+  height: 80px;
+  margin: 0 auto 24px;
+  display: block;
+}
+
+.checkmark-circle {
+  stroke: var(--success);
+  stroke-width: 2;
+  stroke-dasharray: 166;
+  stroke-dashoffset: 166;
+  fill: none;
+  animation: checkmarkCircle 0.6s ease forwards;
+}
+
+.checkmark-check {
+  stroke: var(--success);
+  stroke-width: 3;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+  stroke-dasharray: 48;
+  stroke-dashoffset: 48;
+  fill: none;
+  animation: checkmarkDraw 0.4s ease 0.6s forwards;
+}
+
+@keyframes checkmarkCircle {
+  to { stroke-dashoffset: 0; }
+}
+
+@keyframes checkmarkDraw {
+  to { stroke-dashoffset: 0; }
+}
+
+/* ===== Theme-aware transitions on key surfaces ===== */
+.site-header,
+.site-footer,
+.service-card,
+.value-card,
+.content-panel,
+.channel-card,
+.team-card,
+.testimonial-card,
+.blog-card,
+.downloads-panel,
+.contact-form,
+.contact-details,
+.form-success,
+.gallery-card {
+  transition: background 0.3s ease, border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
   }
 }

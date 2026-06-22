@@ -5,20 +5,44 @@ import ServiceCard from '../components/ServiceCard'
 import CTAButton from '../components/CTAButton'
 import WaveDivider from '../components/WaveDivider'
 import AnimatedSection from '../components/AnimatedSection'
+import StatsCounter from '../components/StatsCounter'
 import { services } from '../data/services'
+
+function StaggeredHeading({ text }) {
+  const words = text.split(' ')
+  return (
+    <h1 className="staggered-heading">
+      {words.map((word, i) => (
+        <span key={i} style={{ animationDelay: `${i * 0.05}s` }}>{word}{' '}</span>
+      ))}
+    </h1>
+  )
+}
 
 export default function Home() {
   const { t } = useTranslation()
   const translatedServices = t('services.items', { returnObjects: true })
+
+  const stats = [
+    { end: 10, suffix: '+', label: 'Years experience' },
+    { end: 50, suffix: '+', label: 'Projects completed' },
+    { end: 5, suffix: '', label: 'Countries served' },
+    { end: 24, suffix: '/7', label: 'Support available' },
+  ]
 
   return (
     <section className="home-page">
       <Seo title="Home" description={t('home.description')} path="/" />
 
       <div className="hero-panel">
+        <div className="floating-shapes" aria-hidden="true">
+          <div className="shape shape-1"></div>
+          <div className="shape shape-2"></div>
+          <div className="shape shape-3"></div>
+        </div>
         <AnimatedSection className="hero-copy" fadeUp={false}>
           <p className="eyebrow">{t('home.eyebrow')}</p>
-          <h1>{t('home.title')}</h1>
+          <StaggeredHeading text={t('home.title')} />
           <p className="hero-text">{t('home.description')}</p>
           <div className="hero-actions">
             <CTAButton>{t('home.cta')}</CTAButton>
@@ -64,6 +88,14 @@ export default function Home() {
               <h3>{card.title}</h3>
               <p>{card.description}</p>
             </div>
+          </AnimatedSection>
+        ))}
+      </AnimatedSection>
+
+      <AnimatedSection as="section" className="stats-row" fadeUp={false}>
+        {stats.map((stat, idx) => (
+          <AnimatedSection key={idx} style={{ animationDelay: `${idx * 0.1}s` }}>
+            <StatsCounter end={stat.end} suffix={stat.suffix} label={stat.label} />
           </AnimatedSection>
         ))}
       </AnimatedSection>

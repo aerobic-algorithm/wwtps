@@ -145,6 +145,16 @@ export default function Contact() {
       </div>
 
       <div className="contact-grid">
+        {status === 'success' ? (
+          <div className="form-success">
+            <svg className="checkmark" viewBox="0 0 52 52" aria-hidden="true">
+              <circle className="checkmark-circle" cx="26" cy="26" r="25" fill="none" />
+              <path className="checkmark-check" d="M14 27l7 7 16-16" fill="none" />
+            </svg>
+            <h3>{t('contact.formSuccessTitle')}</h3>
+            <p>{t('contact.formSuccess')}</p>
+          </div>
+        ) : (
         <form className="contact-form" onSubmit={handleSubmit(onSubmit)}>
           <label>
             {t('contact.formName')}
@@ -174,9 +184,9 @@ export default function Contact() {
           <button type="submit" className="form-submit" disabled={isSubmitting}>
             {isSubmitting ? t('contact.formSending') : t('contact.formSend')}
           </button>
-          {status === 'success' && <p className="form-status success">{t('contact.formSuccess')}</p>}
           {status === 'error' && <p className="form-status error">{t('contact.formError')}</p>}
         </form>
+        )}
 
         <aside className="contact-details">
           <div>

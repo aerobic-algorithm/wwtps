@@ -64,6 +64,7 @@
     "formSend": "Send message",
     "formSending": "Sending...",
     "formSuccess": "Message received — we will reply shortly.",
+    "formSuccessTitle": "Thank you!",
     "office": "Office",
     "officeHours": "Office hours",
     "officeHoursValue": "Mon–Fri, 8:00 AM – 5:00 PM PT",
