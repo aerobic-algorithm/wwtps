@@ -59,6 +59,7 @@ export default function Header() {
     <header className="site-header">
       <div className="container header-inner">
         <Link className="brand" to="/">
+          <img src={`${import.meta.env.BASE_URL}favicon.svg`} alt="" className="brand-icon" />
           Hub Wastewater Solutions
         </Link>
         <div className="header-controls">
