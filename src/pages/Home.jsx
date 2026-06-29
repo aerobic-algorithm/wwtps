@@ -5,8 +5,8 @@ import {
   HiOutlineStar, HiOutlineBuildingOffice2,
 } from 'react-icons/hi2'
 import { useTranslation } from 'react-i18next'
-import heroImg from '../assets/hero.png'
 import Seo from '../components/Seo'
+import HeroIllustration from '../components/HeroIllustration'
 import ServiceCard from '../components/ServiceCard'
 import CTAButton from '../components/CTAButton'
 import WaveDivider from '../components/WaveDivider'
@@ -71,7 +71,7 @@ export default function Home() {
         </AnimatedSection>
         <AnimatedSection className="hero-panel__card">
           <div className="hero-card">
-            <img src={heroImg} alt="" className="hero-card__image" />
+            <HeroIllustration />
             <div className="hero-card__body">
               <p className="tag">{t('home.tagline')}</p>
               <h2>{t('home.taglineTitle')}</h2>
