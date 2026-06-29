@@ -103,7 +103,6 @@ export default function Header() {
             >
               <HiOutlineMagnifyingGlass size={18} />
             </button>
-            <DarkModeToggle />
           </div>
           <NavLink to="/" end className={({ isActive }) => (isActive ? 'nav-link active' : 'nav-link')} onClick={() => setIsMenuOpen(false)}>
             {t('header.home')}

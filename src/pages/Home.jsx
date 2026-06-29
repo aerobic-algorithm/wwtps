@@ -1,5 +1,11 @@
-import { HiOutlineSparkles, HiOutlineRocketLaunch, HiOutlineShieldCheck } from 'react-icons/hi2'
+import {
+  HiOutlineSparkles, HiOutlineRocketLaunch, HiOutlineShieldCheck,
+  HiOutlineClock, HiOutlineBriefcase, HiOutlineGlobeAlt,
+  HiOutlineChatBubbleLeftRight, HiOutlineUserGroup, HiOutlineUsers,
+  HiOutlineStar, HiOutlineBuildingOffice2,
+} from 'react-icons/hi2'
 import { useTranslation } from 'react-i18next'
+import heroImg from '../assets/hero.png'
 import Seo from '../components/Seo'
 import ServiceCard from '../components/ServiceCard'
 import CTAButton from '../components/CTAButton'
@@ -19,15 +25,30 @@ function StaggeredHeading({ text }) {
   )
 }
 
+const statIcons = [
+  HiOutlineClock,
+  HiOutlineBriefcase,
+  HiOutlineGlobeAlt,
+  HiOutlineChatBubbleLeftRight,
+  HiOutlineUserGroup,
+  HiOutlineUsers,
+  HiOutlineStar,
+  HiOutlineBuildingOffice2,
+]
+
 export default function Home() {
   const { t } = useTranslation()
   const translatedServices = t('services.items', { returnObjects: true })
 
   const stats = [
-    { end: 10, suffix: '+', label: 'Years experience' },
-    { end: 50, suffix: '+', label: 'Projects completed' },
-    { end: 5, suffix: '', label: 'Countries served' },
-    { end: 24, suffix: '/7', label: 'Support available' },
+    { end: 10, suffix: '+', label: 'Years experience', to: '/about' },
+    { end: 50, suffix: '+', label: 'Projects completed', to: '/gallery' },
+    { end: 5, suffix: '', label: 'Countries served', to: '/about' },
+    { end: 24, suffix: '/7', label: 'Support available', to: '/contact' },
+    { end: 100, suffix: '+', label: 'Satisfied clients', to: '/testimonials' },
+    { end: 15, suffix: '+', label: 'Expert team members', to: '/team' },
+    { end: 99, suffix: '%', label: 'Client satisfaction', to: '/testimonials' },
+    { end: 8, suffix: '+', label: 'Industries served', to: '/services' },
   ]
 
   return (
@@ -50,9 +71,12 @@ export default function Home() {
         </AnimatedSection>
         <AnimatedSection className="hero-panel__card">
           <div className="hero-card">
-            <p className="tag">{t('home.tagline')}</p>
-            <h2>{t('home.taglineTitle')}</h2>
-            <p>{t('home.taglineDescription')}</p>
+            <img src={heroImg} alt="" className="hero-card__image" />
+            <div className="hero-card__body">
+              <p className="tag">{t('home.tagline')}</p>
+              <h2>{t('home.taglineTitle')}</h2>
+              <p>{t('home.taglineDescription')}</p>
+            </div>
           </div>
         </AnimatedSection>
       </div>
@@ -67,7 +91,7 @@ export default function Home() {
         </div>
         <div className="service-tiles">
           {services.slice(0, 4).map((service, idx) => (
-            <AnimatedSection key={service.title} style={{ animationDelay: `${idx * 0.1}s` }}>
+            <AnimatedSection key={service.title} data-accent={idx} style={{ animationDelay: `${idx * 0.1}s` }}>
               <ServiceCard
                 {...service}
                 title={translatedServices[idx]?.title || service.title}
@@ -95,7 +119,13 @@ export default function Home() {
       <AnimatedSection as="section" className="stats-row" fadeUp={false}>
         {stats.map((stat, idx) => (
           <AnimatedSection key={idx} style={{ animationDelay: `${idx * 0.1}s` }}>
-            <StatsCounter end={stat.end} suffix={stat.suffix} label={stat.label} />
+            <StatsCounter
+              icon={statIcons[idx]}
+              end={stat.end}
+              suffix={stat.suffix}
+              label={stat.label}
+              to={stat.to}
+            />
           </AnimatedSection>
         ))}
       </AnimatedSection>

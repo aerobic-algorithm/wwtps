@@ -448,11 +448,25 @@ button {
 }
 
 .hero-card {
-  background: linear-gradient(180deg, var(--bg-surface) 0%, var(--bg-muted) 100%);
+  background: var(--bg-surface);
   border: 1px solid var(--border);
   box-shadow: var(--shadow);
   border-radius: 32px;
-  padding: 36px;
+  overflow: hidden;
+  padding: 0;
+}
+
+.hero-card__image {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+  display: block;
+  border-bottom: 1px solid var(--border);
+}
+
+.hero-card__body {
+  padding: 28px 36px 36px;
+  background: linear-gradient(180deg, var(--bg-surface) 0%, var(--bg-muted) 100%);
 }
 
 .hero-card .tag {
@@ -530,23 +544,30 @@ button {
   min-height: 240px;
   box-shadow: var(--shadow);
   transition: transform 0.3s ease, border-color 0.3s ease, box-shadow 0.3s ease;
+  border-top: 4px solid var(--card-accent, var(--border));
 }
 
 .service-card:hover {
   transform: translateY(-6px);
-  border-color: var(--accent);
+  border-color: var(--card-accent, var(--accent));
   box-shadow: 0 24px 48px rgba(11, 79, 102, 0.12);
 }
+
+/* Service card accent theming (home page) */
+.service-tiles [data-accent="0"] { --card-accent: #0b4f66; --card-accent-soft: rgba(11, 79, 102, 0.10); }
+.service-tiles [data-accent="1"] { --card-accent: #5b4f8a; --card-accent-soft: rgba(91, 79, 138, 0.10); }
+.service-tiles [data-accent="2"] { --card-accent: #1a7a4a; --card-accent-soft: rgba(26, 122, 74, 0.10); }
+.service-tiles [data-accent="3"] { --card-accent: #b45309; --card-accent-soft: rgba(180, 83, 9, 0.10); }
 
 .service-icon {
   width: 56px;
   height: 56px;
   display: grid;
   place-items: center;
-  background: var(--accent-soft);
+  background: var(--card-accent-soft, var(--accent-soft));
   border-radius: 16px;
   margin-bottom: 20px;
-  color: var(--accent);
+  color: var(--card-accent, var(--accent));
 }
 
 .service-card h3 {
@@ -566,6 +587,10 @@ button {
   gap: 24px;
   margin-top: 48px;
   align-items: start;
+  position: relative;
+  padding: 40px 32px;
+  background: radial-gradient(ellipse at 30% 40%, var(--primary-soft) 0%, transparent 60%);
+  border-radius: 32px;
 }
 
 .value-card {
@@ -1607,8 +1632,7 @@ button {
     margin-bottom: 4px;
   }
 
-  .header-controls .header-icon-btn,
-  .header-controls .dark-toggle {
+  .header-controls .header-icon-btn {
     display: none;
   }
 
@@ -2700,12 +2724,48 @@ button {
   grid-template-columns: repeat(4, 1fr);
   gap: 24px;
   margin-top: 64px;
-  padding: 40px 0;
-  border-top: 1px solid var(--border);
+  padding: 48px 32px;
+  border: none;
+  background: radial-gradient(ellipse at 70% 60%, var(--accent-soft) 0%, transparent 60%);
+  border-radius: 32px;
 }
 
 .stat-counter {
   text-align: center;
+}
+
+.stat-counter--link {
+  text-decoration: none;
+  display: block;
+  cursor: pointer;
+  border-radius: 16px;
+  padding: 12px 8px;
+  margin: -12px -8px;
+  transition: transform 0.25s ease, background 0.25s ease;
+}
+
+.stat-counter--link:hover {
+  transform: translateY(-4px);
+  background: var(--primary-soft);
+}
+
+.stat-counter--link:hover .stat-number {
+  opacity: 0.85;
+}
+
+.stat-icon {
+  display: block;
+  width: 28px;
+  height: 28px;
+  margin: 0 auto 10px;
+  color: var(--accent);
+  opacity: 0.75;
+  transition: opacity 0.25s ease, transform 0.25s ease;
+}
+
+.stat-counter--link:hover .stat-icon {
+  opacity: 1;
+  transform: scale(1.12);
 }
 
 .stat-number {
