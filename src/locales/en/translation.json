@@ -161,7 +161,38 @@
   },
   "process": {
     "hint": "Click a treatment stage above to see how we can help.",
-    "stages": "",
+    "stages": {
+      "influent": {
+        "label": "Influent & Screening",
+        "description": "Raw wastewater enters the plant through collection systems and passes through bar screens to remove large debris.",
+        "details": "We help optimize screening operations, assess influent loading variability, and design monitoring plans to protect downstream processes. Our compliance reviews ensure your screening and sampling meets regulatory requirements."
+      },
+      "primary": {
+        "label": "Primary Treatment",
+        "description": "Wastewater flows into sedimentation basins where solids settle and scum is skimmed from the surface.",
+        "details": "Our startup support and commissioning services validate primary clarifier mechanics, sludge collection, and flow distribution. We troubleshoot settling issues and tune chemical dosing for better solids removal."
+      },
+      "biological": {
+        "label": "Biological Treatment",
+        "description": "Microorganisms break down organic matter in aerated basins using activated sludge, MBBR, SBR, or similar processes.",
+        "details": "This is the heart of the plant, and our core strength. We optimize aeration, nutrient dosing, and biomass health. Our team troubleshoots bulking, foaming, and nitrification upsets, and provides hands-on operator training for biological process control."
+      },
+      "secondary": {
+        "label": "Secondary Clarification",
+        "description": "Mixed liquor flows to final clarifiers where treated solids settle, producing clear effluent and return activated sludge.",
+        "details": "We assess clarifier hydraulics, solids loading, and sludge settling characteristics. Our commissioning support ensures weir leveling, skimmer operation, and RAS flow control are dialed in for peak performance."
+      },
+      "tertiary": {
+        "label": "Tertiary & Disinfection",
+        "description": "Polishing steps such as filtration, UV disinfection, or chemical dosing remove remaining contaminants before discharge.",
+        "details": "Our team validates disinfection system performance, optimizes chemical dosing, and verifies effluent quality through rigorous testing. We provide troubleshooting for filtration breakthrough and disinfection byproduct issues."
+      },
+      "effluent": {
+        "label": "Effluent & Sludge Handling",
+        "description": "Treated water is discharged or reused, while sludge is digested, dewatered, and hauled away for beneficial use or disposal.",
+        "details": "We support compliance reporting and effluent monitoring programs. Our process optimization work extends to sludge handling \u2014 from digester health to polymer dosing optimization \u2014 reducing hauling costs and improving biosolids quality."
+      }
+    },
     "subtitle": "Click a stage to learn how our services support your treatment process from start to finish.",
     "title": "How we help at every stage"
   },
